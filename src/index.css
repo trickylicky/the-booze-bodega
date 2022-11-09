@@ -41,3 +41,19 @@ body {
   text-decoration: underline;
   color: red;
 }
+
+/* Footer */
+footer {
+  background-color:rgb(165, 91, 103);
+  color: white;
+  padding-bottom: 5px;
+}
+.sections {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer ul {
+  list-style-type: none;
+  line-height: 2em;
+}
