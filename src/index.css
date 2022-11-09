@@ -57,3 +57,30 @@ footer ul {
   list-style-type: none;
   line-height: 2em;
 }
+
+/* Blog*/
+.blog{
+  /* padding-left: 23em; */
+  /* align-items: center;
+  margin-right: 200px;
+  margin-left: 300px;
+   */
+}
+
+.article {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 80px;
+}
+
+.blogarticle {
+  width: 33vw;
+  background-color: lightgray;
+  border-radius: 2%;
+  padding: 10px;
+}
+
+.blogarticle img {
+  display: inline-block;
+  width: 32vw;
+}
