@@ -46,7 +46,7 @@ function Footer() {
             </ul>
         </section>
     </div> <hr />
-    <div>
+    <div style={{display: "flex", justifyContent: "space-evenly"}}>
         <p> &copy; 2022 BoozeBodega, Kenya. All rights reserved.</p>
         <p>
             <i className="fa-brands fa-facebook"></i> &nbsp; 
