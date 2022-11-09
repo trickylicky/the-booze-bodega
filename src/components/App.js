@@ -2,11 +2,9 @@ import React from 'react'
 import NavBar from './NavBar'
 import {Routes, Route} from "react-router-dom"
 import Home from "./Home"
-import Whiskey from "./Whiskey"
-import Vodka from "./Vodka"
-import Wine from "./Wine"
-import Gin from "./Gin"
 import Footer from "./Footer"
+import Liquor from './Liquor'
+import Blog from './Blog'
 
 function App() {
   return (
@@ -14,10 +12,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route exact path='/' element={<Home />} />
-        <Route path='/whiskey' element={<Whiskey />} />
-        <Route path='/vodka' element={<Vodka />} />
-        <Route path='/wine' element={<Wine />} />
-        <Route path='/gin' element={<Gin />} />
+        <Route path='/liquor' element={<Liquor />} />
+        <Route path='/blog' element={<Blog />} />
       </Routes>
       <Footer />
     </div>
