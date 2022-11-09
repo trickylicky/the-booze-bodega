@@ -2,7 +2,9 @@ import React from 'react'
 
 function Liquor() {
   return (
-    <div>Liquor</div>
+    <div className='liquor'>
+        <p>liquor</p>
+        </div>
   )
 }
 
