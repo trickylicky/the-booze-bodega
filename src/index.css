@@ -7,7 +7,12 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  background-image: url(../public/bg5.webp);
+  background-repeat: no-repeat;
+  background-size: 100vw 40vh;
+  background-position: 0% 30%;
 }
+
 /* Navbar */
 .navlinks {
   height: 15vh;
@@ -30,17 +35,17 @@ body {
   display: inline-block;
   font-size: 1em;
   text-decoration: none;
-  /* font-weight: bold; */
   color: black;
 }
 .navbar a:hover {
-  font-size: x-large;
-  color: blue;
+  font-size: large;
+  color: red;
 }
 .navbar a:active {
   text-decoration: underline;
-  color: red;
 }
+/* NavBar end */
+
 
 /* Footer */
 footer {
@@ -52,8 +57,17 @@ footer {
   display: flex;
   justify-content: space-around;
 }
-
 footer ul {
   list-style-type: none;
   line-height: 2em;
+}
+/* Footer end */
+
+/* Home */
+.home p, .liquor p , .blog p {
+ height: 50vh; 
+ margin-top: 15vh;
+ color: white;
+ text-align: center;
+ font-size: 3em;
 }
