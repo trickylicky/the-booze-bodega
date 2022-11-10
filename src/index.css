@@ -9,11 +9,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
   background: url(../public/bg2.jpg) no-repeat 0% 25vh;
   background-size: 100vw 40vh;
+  background-color: black;
 }
 .first {
   height: 30vh; 
   margin-top: 15vh;
-  color: white;
+  color: pink;
   text-align: center;
   font-size: 3em;
  }
@@ -37,7 +38,7 @@ body {
   display: inline-block;
   font-size: 1em;
   text-decoration: none;
-  color: black;
+  color: pink;
 }
 .navbar a:hover {
   font-size: large;
@@ -96,7 +97,8 @@ footer ul {
   align-items: center;
   width: 30vw;
   border-radius: 10px;
-  background-color: lightgray;
+  color: pink;
+  background-color: black;
 }
 
 #liquor p {
@@ -114,8 +116,8 @@ footer ul {
   justify-content: space-evenly;
 }
 .submit, .readmore {
-  background-color: red;
-  color: white;
+  background-color: pink;
+  color: red;
   width: 70%;
 }
 
@@ -128,12 +130,3 @@ footer ul {
 }
 
 /* Liquor end  */
-
-/* Search */
-.search {
-  display: block;
-  margin: auto;
-  width: 20%;
-}
-
-/* Search end */
