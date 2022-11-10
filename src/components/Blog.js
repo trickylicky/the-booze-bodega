@@ -4,7 +4,7 @@ import BlogArticle from './BlogArticle'
 function Blog() {
   return (
     <div className='blog'>
-<<<<<<< HEAD
+      <p className='first'>Blog</p>
         <div className='article'>
           <BlogArticle />
           <BlogArticle />
@@ -13,9 +13,7 @@ function Blog() {
           <BlogArticle />
           <BlogArticle />
         </div>
-=======
-        <p className='first'>Blog</p>
->>>>>>> dev
+        
     </div>
   )
 }
