@@ -9,14 +9,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
   background: url(../public/bg2.jpg) no-repeat 0% 25vh;
   background-size: 100vw 40vh;
+  background-color: black;
 }
 .first {
   height: 30vh; 
   margin-top: 15vh;
-  color: white;
+  color: pink;
   text-align: center;
   font-size: 3em;
  }
+ .second {   color: pink; }
 
 /* Navbar */
 .navlinks {
@@ -37,7 +39,7 @@ body {
   display: inline-block;
   font-size: 1em;
   text-decoration: none;
-  color: black;
+  color: pink;
 }
 .navbar a:hover {
   font-size: large;
@@ -73,14 +75,12 @@ footer ul {
   justify-content: space-evenly;
   margin-bottom: 80px;
 }
-
 .blogarticle {
   width: 23vw;
   background-color: lightgray;
   border-radius: 2%;
   padding: 10px;
 }
-
 .blogarticle img {
   display: inline-block;
   width: 23vw;
@@ -96,16 +96,15 @@ footer ul {
   align-items: center;
   width: 30vw;
   border-radius: 10px;
-  background-color: lightgray;
+  color: pink;
+  background-color: black;
 }
-
 #liquor p {
   text-align: center;
   line-height: 2em;
 }
-
 #liquor img {
-  width: 70%;
+  width: 60%;
   height: 100%;
 }
 .liquors {
@@ -114,26 +113,25 @@ footer ul {
   justify-content: space-evenly;
 }
 .submit, .readmore {
-  background-color: red;
-  color: white;
-  width: 70%;
+  background-color: pink;
+  color: black;
 }
-
 .readmore{
   width:30%
 }
-
 .submit:active, .readmore:active {
   font-size: large;
 }
 
 /* Liquor end  */
 
-/* Search */
-.search {
-  display: block;
-  margin: auto;
-  width: 20%;
+.subcategories {
+  display: flex;
+  justify-content: space-evenly;
 }
+.subcategories a {
+  text-decoration: none;
+  text-align: center;
+  color: pink;
 
-/* Search end */
+}
