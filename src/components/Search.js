@@ -1,8 +1,15 @@
 import React from 'react'
 
-function Search() {
+function Search( {searchFilter} ) {
+ 
   return (
-    <div>Search</div>
+     <div className="center search">
+    <input
+      type="text"
+      placeholder="Search..."
+      onChange={(e) => searchFilter(e)}
+    />
+  </div>
   )
 }
 

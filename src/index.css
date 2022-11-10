@@ -64,8 +64,9 @@ footer ul {
   line-height: 2em;
 }
 
-/* Blog*/
+/* Footer end */
 
+/* Blog*/
 
 .article {
   display: flex;
@@ -74,7 +75,7 @@ footer ul {
 }
 
 .blogarticle {
-  width: 33vw;
+  width: 23vw;
   background-color: lightgray;
   border-radius: 2%;
   padding: 10px;
@@ -82,9 +83,10 @@ footer ul {
 
 .blogarticle img {
   display: inline-block;
-  width: 32vw;
+  width: 23vw;
 }
-/* Footer end */
+
+/* Blog end */
 
 /* Liquor */
 #liquor {
@@ -111,12 +113,27 @@ footer ul {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.submit {
+.submit, .readmore {
   background-color: red;
   color: white;
   width: 70%;
 }
 
-.submit:active {
-  text-decoration: underline;
+.readmore{
+  width:30%
 }
+
+.submit:active, .readmore:active {
+  font-size: large;
+}
+
+/* Liquor end  */
+
+/* Search */
+.search {
+  display: block;
+  margin: auto;
+  width: 20%;
+}
+
+/* Search end */
