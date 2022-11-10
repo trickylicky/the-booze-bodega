@@ -7,16 +7,23 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  background: url(../public/bg2.jpg) no-repeat 0% 25vh;
+  background-size: 100vw 40vh;
 }
+.first {
+  height: 30vh; 
+  margin-top: 15vh;
+  color: white;
+  text-align: center;
+  font-size: 3em;
+ }
+
 /* Navbar */
 .navlinks {
-  height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
-  border-radius: 5px;
-  width: 40vw;
+  width: 50vw;
   margin: auto;
 }
 .navh1 {
@@ -30,21 +37,21 @@ body {
   display: inline-block;
   font-size: 1em;
   text-decoration: none;
-  /* font-weight: bold; */
   color: black;
 }
 .navbar a:hover {
-  font-size: x-large;
-  color: blue;
+  font-size: large;
+  color: red;
 }
 .navbar a:active {
   text-decoration: underline;
-  color: red;
 }
+/* NavBar end */
+
 
 /* Footer */
 footer {
-  background-color:rgb(165, 91, 103);
+  background-color:rgb(155, 27, 47);
   color: white;
   padding-bottom: 5px;
 }
@@ -52,20 +59,13 @@ footer {
   display: flex;
   justify-content: space-around;
 }
-
 footer ul {
   list-style-type: none;
   line-height: 2em;
 }
 
 /* Blog*/
-.blog{
-  /* padding-left: 23em; */
-  /* align-items: center;
-  margin-right: 200px;
-  margin-left: 300px;
-   */
-}
+
 
 .article {
   display: flex;
@@ -83,4 +83,40 @@ footer ul {
 .blogarticle img {
   display: inline-block;
   width: 32vw;
+}
+/* Footer end */
+
+/* Liquor */
+#liquor {
+  margin-bottom: 30px;
+  border: 2px whitesmoke solid;
+  display: flex;
+  align-items: center;
+  width: 30vw;
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+#liquor p {
+  text-align: center;
+  line-height: 2em;
+}
+
+#liquor img {
+  width: 70%;
+  height: 100%;
+}
+.liquors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.submit {
+  background-color: red;
+  color: white;
+  width: 70%;
+}
+
+.submit:active {
+  text-decoration: underline;
 }
