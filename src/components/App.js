@@ -25,18 +25,24 @@ function App() {
   const gins = liquors.filter(liquor => liquor.category === "Gin")
 
 
+  const searchFilter = e => {
+    const filteredResults = liquors.filter(liquor => liquor.title.toUpperCase().includes(e.target.value.toUpperCase()))
+    setLiquors(filteredResults)
+  }
+
+
   return (
     <div>
-      <NavBar />
-      <Search />
+      <NavBar /> <br /><br />
+      <Search setLiquors={setLiquors} liquors={liquors} searchFilter={searchFilter}/>
       <Routes>
         <Route exact path='/' element={<Home liquors = {liquors} />} />
         <Route path='/whiskey' element={<Whiskey whiskeys = {whiskeys} />} />
-        <Route path='/gin' element={<Gin gins= {gins} />} />
+        <Route path='/gin' element={<Gin gins= {gins} searchFilter={searchFilter}/>} />
         <Route path='/vodka' element={<Vodka vodkas = {vodkas} />} />
         <Route path='/wine' element={<Wine wines = {wines} />} />
         <Route path='/blog' element={<Blog />} />
-      </Routes>
+      </Routes>      
       <Footer />
     </div>
   )

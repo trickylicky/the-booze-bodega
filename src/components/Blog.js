@@ -7,10 +7,8 @@ function Blog() {
       <p className='first'>Blog</p>
         <div className='article'>
           <BlogArticle />
-          <BlogArticle />
         </div>
         <div className='article'>
-          <BlogArticle />
           <BlogArticle />
         </div>
         
