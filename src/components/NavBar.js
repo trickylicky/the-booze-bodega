@@ -9,8 +9,17 @@ function NavBar() {
               <NavLink to='/' >
                   HOME
               </NavLink>
-              <NavLink to='/liquor' >
-                  LIQUORS
+              <NavLink to='/whiskey' >
+                WHISKEY
+              </NavLink>
+              <NavLink to='/gin' >
+                  GIN
+              </NavLink>
+              <NavLink to='/vodka' >
+                  VODKA
+              </NavLink>
+              <NavLink to='/wine' >
+                  WINE
               </NavLink>
               <NavLink to='/blog' >
                   BLOG

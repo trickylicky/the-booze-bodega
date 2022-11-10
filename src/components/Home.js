@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Home() {
+function Home( {liquors} ) {
+
   return (
-    <div className='home'>
-      <p>home</p>
+    <div className='component home'>
+      <p className='first'>Discover Our Range</p>
     </div>
   )
 }
