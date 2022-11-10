@@ -8,7 +8,6 @@ import Whiskey from './Whiskey'
 import Gin from './Gin'
 import Vodka from './Vodka'
 import Wine from './Wine'
-import Search from './Search'
 
 function App() {
   const [liquors, setLiquors] = useState([])
@@ -24,21 +23,13 @@ function App() {
   const vodkas = liquors.filter(liquor => liquor.category === "Vodka")
   const gins = liquors.filter(liquor => liquor.category === "Gin")
 
-
-  const searchFilter = e => {
-    const filteredResults = liquors.filter(liquor => liquor.title.toUpperCase().includes(e.target.value.toUpperCase()))
-    setLiquors(filteredResults)
-  }
-
-
   return (
     <div>
-      <NavBar /> <br /><br />
-      <Search setLiquors={setLiquors} liquors={liquors} searchFilter={searchFilter}/>
+      <NavBar />
       <Routes>
         <Route exact path='/' element={<Home liquors = {liquors} />} />
         <Route path='/whiskey' element={<Whiskey whiskeys = {whiskeys} />} />
-        <Route path='/gin' element={<Gin gins= {gins} searchFilter={searchFilter}/>} />
+        <Route path='/gin' element={<Gin gins= {gins} />} />
         <Route path='/vodka' element={<Vodka vodkas = {vodkas} />} />
         <Route path='/wine' element={<Wine wines = {wines} />} />
         <Route path='/blog' element={<Blog />} />
