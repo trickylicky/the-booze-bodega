@@ -125,6 +125,15 @@ footer ul {
 
 /* Liquor end  */
 
+/* Search */
+.search {
+  display: block;
+  margin: auto;
+  width: 10%;
+}
+
+/* Search end */
+
 .subcategories {
   display: flex;
   justify-content: space-evenly;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-function Home( {liquors} ) {
+function Home() {
 
   return (
     <div className='component home'>

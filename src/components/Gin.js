@@ -2,7 +2,7 @@ import React from 'react'
 import Liquor from './Liquor'
 
 
-function Gin( {gins } ) {
+function Gin( {gins} ) {
   return (
     <div className='component blog'>
         <p className='first'>Gin</p>
