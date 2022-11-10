@@ -8,7 +8,6 @@ import Whiskey from './Whiskey'
 import Gin from './Gin'
 import Vodka from './Vodka'
 import Wine from './Wine'
-import Search from './Search'
 
 function App() {
   const [liquors, setLiquors] = useState([])
