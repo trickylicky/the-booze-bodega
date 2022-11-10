@@ -6,7 +6,7 @@ function Gin( {gins } ) {
   return (
     <div className='component blog'>
         <p className='first'>Gin</p>
-        <p>There are {gins.length} products.</p>
+        <p className='second'>There are {gins.length} products.</p>
         <Liquor props = {gins} />
     </div>
   )

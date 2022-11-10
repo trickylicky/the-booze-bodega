@@ -5,7 +5,7 @@ function Wine( {wines} ) {
   return (
     <div className='component blog'>
         <p className='first'>Wine</p>
-        <p>There are {wines.length} products</p>
+        <p className='second'>There are {wines.length} products</p>
         <Liquor props = {wines} />
     </div>
   )

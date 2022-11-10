@@ -5,7 +5,7 @@ function Whiskey( {whiskeys}) {
   return (
     <div className='component blog'>
         <p className='first'>Whiskey</p>
-        <p>There are {whiskeys.length} products.</p>
+        <p className='second'>There are {whiskeys.length} products.</p>
         <Liquor props = {whiskeys} />
     </div>
   )
