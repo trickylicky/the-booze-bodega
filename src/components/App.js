@@ -12,7 +12,7 @@ import Wine from './Wine'
 function App() {
   const [liquors, setLiquors] = useState([])
 
-  const API = "https://liquor-data.herokuapp.com/liquor"
+  const API = "http://localhost:9292/liquors"
 
   useEffect(() => {
     fetch(API).then(res=> res.json()).then(data => setLiquors(data)).catch(console.log)
