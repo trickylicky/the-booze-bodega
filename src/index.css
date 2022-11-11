@@ -26,7 +26,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 60vw;
-  margin: auto;
+  margin-left: 10%;
 }
 .navh1 {
   color: rgb(155, 27, 47);
@@ -130,6 +130,10 @@ footer ul {
   display: block;
   margin: auto;
   width: 10%;
+  position: absolute;
+  left: 85%;
+  top: 14%;
+ 
 }
 
 /* Search end */
