@@ -10,6 +10,7 @@ import Vodka from './Vodka'
 import Wine from './Wine'
 import Search from './Search'
 import Reviews from './Reviews'
+import AddReview from '../AddReview'
 
 function App() {
   const [liquors, setLiquors] = useState([])
@@ -48,20 +49,20 @@ function App() {
   const vodkas = liquors.filter(liquor => liquor.category === "Vodka" && liquor.price !== null)
   const gins = liquors.filter(liquor => liquor.category === "Gin" && liquor.price !== null)
 
-
   return (
     <div>
       <NavBar /> <br /><br />
       <Search handleSearch ={handleSearch}/>
       <Routes>
-        <Route exact path='/' element={<Home liquors = {liquors} />} />
+        <Route exact path='/' element={<Home/>} />
         <Route path='/whiskey' element={<Whiskey whiskeys = {whiskeys} />} />
         <Route path='/gin' element={<Gin gins= {gins} />} />
         <Route path='/vodka' element={<Vodka vodkas = {vodkas} />} />
         <Route path='/wine' element={<Wine wines = {wines} />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/addreview' element={<AddReview liquors = {liquors} />} />
       </Routes>
-      <Reviews reviews = {reviews} />      
+      <Reviews reviews = {reviews} setReviews = {setReviews} reviewsApi={reviewsApi} />      
       <Footer />
     </div>
   )

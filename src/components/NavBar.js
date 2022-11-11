@@ -24,6 +24,9 @@ function NavBar() {
               <NavLink to='/blog' >
                   BLOG
               </NavLink>
+              <NavLink to='/addreview' >
+                  REVIEW
+              </NavLink>
             </div>
         </nav>
   )

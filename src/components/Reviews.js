@@ -3,10 +3,10 @@ import React from 'react'
 function Reviews( {reviews} ) {
     console.log(reviews);
   return (
-    <div>
+    <div className='reviews'>
         <h2 className='second' style={{textAlign: "center"}}>Customer Reviews</h2>
         {reviews.map(review => (
-            <div className='reviews' >
+            <div  >
                 <ul className="second" >
                     <li key={review.id} className="ul" >{review.comment} </li>
                 </ul>
