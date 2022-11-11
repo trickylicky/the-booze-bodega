@@ -35,8 +35,16 @@ function App() {
     } 
   },[searchInput])
   
-  const handleSearch = (event) => {
-    setSearchInput(event.target.value);
+  const handleSearch = (event) => setSearchInput(event.target.value)
+
+  const handleDelete = e => {
+    fetch(reviewsApi+`/${e.target.id}`,{
+      method: "DELETE",
+      headers : {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+    }).then(res => res.json()).then(data => setReviews(data)).catch(console.log)
   }
 
  useEffect(() => {
@@ -60,9 +68,9 @@ function App() {
         <Route path='/vodka' element={<Vodka vodkas = {vodkas} />} />
         <Route path='/wine' element={<Wine wines = {wines} />} />
         <Route path='/blog' element={<Blog />} />
-        <Route path='/addreview' element={<AddReview liquors = {liquors} />} />
+        <Route path='/addreview' element={<AddReview liquors = {liquors} setReviews = {setReviews} />} reviewsApi={reviewsApi} />
       </Routes>
-      <Reviews reviews = {reviews} setReviews = {setReviews} reviewsApi={reviewsApi} />      
+      <Reviews handleDelete={handleDelete} reviews = {reviews} />      
       <Footer />
     </div>
   )
