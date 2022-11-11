@@ -9,12 +9,15 @@ import Gin from './Gin'
 import Vodka from './Vodka'
 import Wine from './Wine'
 import Search from './Search'
+import Reviews from './Reviews'
 
 function App() {
   const [liquors, setLiquors] = useState([])
   const [searchInput , setSearchInput] = useState([])
+  const [reviews, setReviews] = useState([])
 
   const API = "http://localhost:9292/liquors"
+  const reviewsApi = "http://localhost:9292/reviews"
 
   // const API = "https://liquor-data.herokuapp.com/liquor"
 
@@ -37,6 +40,7 @@ function App() {
 
  useEffect(() => {
     fetch(API).then(res=> res.json()).then(data => setLiquors(data)).catch(console.log)
+    fetch(reviewsApi).then(res=> res.json()).then(data => setReviews(data)).catch(console.log)
   }, [])
 
   const wines = liquors.filter(liquor => liquor.category === "Wines" && liquor.price !== null)
@@ -56,7 +60,8 @@ function App() {
         <Route path='/vodka' element={<Vodka vodkas = {vodkas} />} />
         <Route path='/wine' element={<Wine wines = {wines} />} />
         <Route path='/blog' element={<Blog />} />
-      </Routes>      
+      </Routes>
+      <Reviews reviews = {reviews} />      
       <Footer />
     </div>
   )
