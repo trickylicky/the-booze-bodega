@@ -25,8 +25,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50vw;
-  margin: auto;
+  width: 60vw;
+  margin-left: 10%;
 }
 .navh1 {
   color: rgb(155, 27, 47);
@@ -130,6 +130,10 @@ footer ul {
   display: block;
   margin: auto;
   width: 10%;
+  position: absolute;
+  left: 85%;
+  top: 14%;
+ 
 }
 
 /* Search end */
@@ -143,4 +147,30 @@ footer ul {
   text-align: center;
   color: pink;
 
+}
+.ul {
+  list-style-type: none;
+}
+
+/* AddReviews */
+
+.reviews {
+  text-align: center;
+  font-style: oblique;
+  margin: 80px 50px 50px;
+  font-size: 1.5em;
+}
+
+form {
+  text-align: center;
+  margin-top: 50px; 
+}
+legend {
+  color: pink;
+  margin: 40px;
+}
+textarea {
+  width: 50vw;
+  height: 30vh;
+  margin-bottom: 10px;
 }

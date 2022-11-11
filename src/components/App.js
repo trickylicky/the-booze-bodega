@@ -9,12 +9,16 @@ import Gin from './Gin'
 import Vodka from './Vodka'
 import Wine from './Wine'
 import Search from './Search'
+import Reviews from './Reviews'
+import AddReview from '../AddReview'
 
 function App() {
   const [liquors, setLiquors] = useState([])
   const [searchInput , setSearchInput] = useState([])
+  const [reviews, setReviews] = useState([])
 
   const API = "http://localhost:9292/liquors"
+  const reviewsApi = "http://localhost:9292/reviews"
 
   // const API = "https://liquor-data.herokuapp.com/liquor"
 
@@ -31,12 +35,21 @@ function App() {
     } 
   },[searchInput])
   
-  const handleSearch = (event) => {
-    setSearchInput(event.target.value);
+  const handleSearch = (event) => setSearchInput(event.target.value)
+
+  const handleDelete = e => {
+    fetch(reviewsApi+`/${e.target.id}`,{
+      method: "DELETE",
+      headers : {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+    }).then(res => res.json()).then(data => setReviews(data)).catch(console.log)
   }
 
  useEffect(() => {
     fetch(API).then(res=> res.json()).then(data => setLiquors(data)).catch(console.log)
+    fetch(reviewsApi).then(res=> res.json()).then(data => setReviews(data)).catch(console.log)
   }, [])
 
   const wines = liquors.filter(liquor => liquor.category === "Wines" && liquor.price !== null)
@@ -44,19 +57,20 @@ function App() {
   const vodkas = liquors.filter(liquor => liquor.category === "Vodka" && liquor.price !== null)
   const gins = liquors.filter(liquor => liquor.category === "Gin" && liquor.price !== null)
 
-
   return (
     <div>
       <NavBar /> <br /><br />
       <Search handleSearch ={handleSearch}/>
       <Routes>
-        <Route exact path='/' element={<Home liquors = {liquors} />} />
+        <Route exact path='/' element={<Home/>} />
         <Route path='/whiskey' element={<Whiskey whiskeys = {whiskeys} />} />
         <Route path='/gin' element={<Gin gins= {gins} />} />
         <Route path='/vodka' element={<Vodka vodkas = {vodkas} />} />
         <Route path='/wine' element={<Wine wines = {wines} />} />
         <Route path='/blog' element={<Blog />} />
-      </Routes>      
+        <Route path='/addreview' element={<AddReview liquors = {liquors} setReviews = {setReviews} />} reviewsApi={reviewsApi} />
+      </Routes>
+      <Reviews handleDelete={handleDelete} reviews = {reviews} />      
       <Footer />
     </div>
   )
