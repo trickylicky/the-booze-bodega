@@ -144,3 +144,11 @@ footer ul {
   color: pink;
 
 }
+.ul {
+  list-style-type: none;
+}
+.reviews {
+  text-align: center;
+  font-style: oblique;
+  margin: 50px 50px;
+}
