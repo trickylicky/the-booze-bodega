@@ -25,7 +25,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50vw;
+  width: 60vw;
   margin: auto;
 }
 .navh1 {
@@ -147,8 +147,26 @@ footer ul {
 .ul {
   list-style-type: none;
 }
+
+/* AddReviews */
+
 .reviews {
   text-align: center;
   font-style: oblique;
-  margin: 50px 50px;
+  margin: 80px 50px 50px;
+  font-size: 1.5em;
+}
+
+form {
+  text-align: center;
+  margin-top: 50px; 
+}
+legend {
+  color: pink;
+  margin: 40px;
+}
+textarea {
+  width: 50vw;
+  height: 30vh;
+  margin-bottom: 10px;
 }
