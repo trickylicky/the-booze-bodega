@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
 function Reviews( {reviews, handleDelete} ) {
   return (
