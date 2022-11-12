@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function LiquorCategory({props}) {
 
@@ -13,7 +14,9 @@ function LiquorCategory({props}) {
                   <b>{obj.title}</b><br /><br />
                   {obj.description} <br /><br />
                   <span style={{color:'red', fontSize: 'large'}}>KSh. {obj.price}</span> <br /> <br />
-                  <button className='submit' type='submit'>Add review</button>
+                  <NavLink to='/addreview'>
+                    <button className='submit' type='click'>More Details</button>
+                  </NavLink>
                 </p>
             </main>
             )

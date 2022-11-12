@@ -13,10 +13,11 @@ body {
 }
 .first {
   height: 30vh; 
-  margin-top: 15vh;
+  margin-top: 10vh;
   color: pink;
   text-align: center;
   font-size: 3em;
+  margin-bottom: 15%;
  }
  .second {   color: pink; }
 
@@ -25,8 +26,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50vw;
-  margin: auto;
+  width: 60vw;
+  margin-left: 10%;
 }
 .navh1 {
   color: rgb(155, 27, 47);
@@ -127,13 +128,15 @@ footer ul {
 
 /* Search */
 .search {
-  display: block;
-  margin: auto;
-  width: 10%;
+  position: absolute;
+  left: 75%;
+  top: 14%;
+ 
 }
 
-/* Search end */
+/* end of Search*/
 
+/* Home */
 .subcategories {
   display: flex;
   justify-content: space-evenly;
@@ -142,5 +145,41 @@ footer ul {
   text-decoration: none;
   text-align: center;
   color: pink;
+}
+.subcategories a img:hover {
+  width: 20vw;
+  height: 20vh;
+}
 
+/* End of Home */
+.ul {
+  list-style-type: none;
+}
+
+/* AddReviews */
+
+.reviews {
+  text-align: center;
+  font-style: oblique;
+  margin: 80px 50px 50px;
+  font-size: 1.5em;
+}
+
+form {
+  text-align: center;
+  margin-top: 50px; 
+}
+legend {
+  color: pink;
+  margin: 40px;
+}
+textarea {
+  width: 50vw;
+  height: 30vh;
+  margin-bottom: 10px;
+}
+
+/* End of AddReviews */
+@media screen {
+  
 }
