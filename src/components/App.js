@@ -45,6 +45,7 @@ function App() {
     })
   }
 
+  const products =liquors
   const wines = liquors.filter( liquor => liquor.category === "Wines" )
   const whiskeys = liquors.filter( liquor => liquor.category === "Whiskey" )
   const vodkas = liquors.filter( liquor => liquor.category === "Vodka" )
@@ -55,7 +56,7 @@ function App() {
       <NavBar />
       <Search handleSearch ={handleSearch}/>
       <Routes>
-        <Route exact path='/' element={<Home/>} />
+        <Route exact path='/' element={<Home products={products}/> } />
         <Route path='/whiskey' element={<Whiskey whiskeys = {whiskeys} />} />
         <Route path='/gin' element={<Gin gins= {gins} />} />
         <Route path='/vodka' element={<Vodka vodkas = {vodkas} />} />
