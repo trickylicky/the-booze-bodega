@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 
-function AddReview( {liquors, setReviews, reviewsApi} ) {
+function AddReview( {setReviews, reviewsApi} ) {
 
     const [form, setForm] = useState({
         rating: null,
         comment: "",
-        user_id: null,
-        liquor_id: null
-    })
+        })
 
     const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value})
 
@@ -17,9 +15,7 @@ function AddReview( {liquors, setReviews, reviewsApi} ) {
 
         const updatedForm = {
           rating: form.rating,
-          comment: form.text,
-          user_id: Math.floor(20*Math.random()),
-          liquor_id: liquors.filter(liquor => liquor.title.toLowerCase() === form.liquorname.toLowerCase())[0].id
+          comment: form.comment,
         }
 
         fetch(reviewsApi, {
@@ -33,24 +29,15 @@ function AddReview( {liquors, setReviews, reviewsApi} ) {
         setForm({
             rating: null,
             comment: "",
-            user_id: null,
-            liquor_id: null
         })
     }
       
   return (
     <div>
-        <p className='first'>New Reviews</p>
+        <p className='first'>New Reviews</p> <br />
         <form>
             <legend> Review </legend>
-            <label style={{color:'pink'}}> Exact Beverage name as indicated? &nbsp;
-                <input 
-                    type="text" 
-                    name='liquorname' 
-                    required
-                    onChange={e => handleChange(e)}/>
-            </label><br /><br /><br />
-            <textarea placeholder='your thoughts on this liquor...' name='text' required></textarea> <br />
+            <textarea placeholder='Share our thoughts on this product...' name='comment' required></textarea> <br /> <br />
             <label style={{color:'pink'}}> On a scale of 1-5, how do you rate this product? &nbsp;
                 <input 
                     type="number" 
@@ -60,7 +47,10 @@ function AddReview( {liquors, setReviews, reviewsApi} ) {
                     required 
                     onChange={e => handleChange(e)}/>
             </label><br /><br /><br />
-            <input type='submit' value='submit' name='submit' onSubmit={e => handleSubmit(e)}/>
+            <input 
+              type='submit' 
+              value='submit' 
+              onSubmit={e => handleSubmit(e)}/>
         </form>
     </div>
   )

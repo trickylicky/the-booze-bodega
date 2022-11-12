@@ -1,9 +1,14 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Reviews( {reviews, handleDelete} ) {
   return (
     <div className='reviews'>
         <h2 className='second' style={{textAlign: "center"}}>Customer Reviews</h2>
+        <li className="ul second">abc</li>  <br />
+        <li className="ul second">omnie</li> <br />
+        <li className="ul second">abc</li> 
+
         {reviews.map(review => (
             <div>
                 <ul className="second" >

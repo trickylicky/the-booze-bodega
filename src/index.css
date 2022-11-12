@@ -13,10 +13,11 @@ body {
 }
 .first {
   height: 30vh; 
-  margin-top: 15vh;
+  margin-top: 10vh;
   color: pink;
   text-align: center;
   font-size: 3em;
+  margin-bottom: 15%;
  }
  .second {   color: pink; }
 
@@ -127,17 +128,15 @@ footer ul {
 
 /* Search */
 .search {
-  display: block;
-  margin: auto;
-  width: 10%;
   position: absolute;
-  left: 85%;
+  left: 75%;
   top: 14%;
  
 }
 
-/* Search end */
+/* end of Search*/
 
+/* Home */
 .subcategories {
   display: flex;
   justify-content: space-evenly;
@@ -146,8 +145,13 @@ footer ul {
   text-decoration: none;
   text-align: center;
   color: pink;
-
 }
+.subcategories a img:hover {
+  width: 20vw;
+  height: 20vh;
+}
+
+/* End of Home */
 .ul {
   list-style-type: none;
 }
@@ -173,4 +177,9 @@ textarea {
   width: 50vw;
   height: 30vh;
   margin-bottom: 10px;
+}
+
+/* End of AddReviews */
+@media screen and {
+  
 }
