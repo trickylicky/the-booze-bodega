@@ -1,12 +1,12 @@
 import React from 'react'
-import Liquor from './Liquor'
+import LiquorCtaegory from './LiquorCategory'
 
 function Wine( {wines} ) {
   return (
     <div className='component wine'>
         <p className='first'>Wine</p>
         <p className='second'>There are {wines.length} products</p>
-        <Liquor props = {wines} />
+        <LiquorCtaegory props = {wines} />
     </div>
   )
 }

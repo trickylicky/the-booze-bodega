@@ -1,5 +1,5 @@
 import React from 'react'
-import Liquor from './Liquor'
+import LiquorCategory from './LiquorCategory'
 
 
 function Gin( {gins} ) {
@@ -7,7 +7,7 @@ function Gin( {gins} ) {
     <div className='component gin'>
         <p className='first'>Gin</p>
         <p className='second'>There are {gins.length} products.</p>
-        <Liquor props = {gins} />
+        <LiquorCategory props = {gins} />
     </div>
   )
 }
