@@ -94,15 +94,15 @@ footer ul {
   width: 18vw;
   border-radius: 10px;
   color: pink;
-  height: auto;
+  height: 56vh;
 }
 #liquor p {
   text-align: center;
 }
 #liquor img {
+  display: block;
   border-radius: 10px 10px 0 0;
   width: 100%;
-  height: 65%;
 }
 .liquors {
   display: flex;
@@ -162,6 +162,7 @@ footer ul {
   color: pink;
   text-align: center;
   border-radius: 1%;
+  overflow-y: auto;
 }
 .popup-content img {
   border-radius: 1% 1% 0 0;
@@ -171,6 +172,7 @@ footer ul {
 }
 [role='tooltip'].popup-content {
   width: auto;
+  height: 70vh;
 }
 
 .popup-overlay {
