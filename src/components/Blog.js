@@ -3,7 +3,7 @@ import BlogArticle from './BlogArticle'
 
 function Blog() {
   return (
-    <div className='blog'>
+    <div className='component blog'>
       <p className='first'>Our Blogs</p>
         <div className='article'>
           <BlogArticle />
