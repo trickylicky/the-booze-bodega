@@ -8,6 +8,7 @@ const AppContextProvider = ({ children }) => {
   const [searchInput , setSearchInput] = useState('')
   const [reviews, setReviews] = useState([])
   const [cart, setCart] = useState([]);
+  const [name, setName] = useState('');
 
 
   const liquorsApi = "http://localhost:9292/liquors"
@@ -23,6 +24,15 @@ const AppContextProvider = ({ children }) => {
     else {
       const parsed = await JSON.parse(parsedCart);
       setCart(parsed);
+    }
+  }
+
+  const getUserName = () => {
+    const foundUser = localStorage.getItem('user');
+    if(!foundUser) return false;
+    if(foundUser) {
+      setName(foundUser);
+      return true;
     }
   }
 
@@ -81,7 +91,7 @@ const AppContextProvider = ({ children }) => {
     const stringCart = await JSON.stringify(cartToParse);
     localStorage.setItem('cart', stringCart);
 }
-    const value = { wines, cart, liquors, handleSearch, reviews, addToCart, whiskeys, gins, vodkas };
+    const value = { name, setName, getUserName, wines, cart, liquors, handleSearch, reviews, addToCart, whiskeys, gins, vodkas };
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>
 }
 
