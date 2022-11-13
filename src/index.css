@@ -94,22 +94,22 @@ footer ul {
   width: 18vw;
   border-radius: 10px;
   color: pink;
-  height: auto;
+  height: 56vh;
 }
 #liquor p {
   text-align: center;
 }
 #liquor img {
+  display: block;
   border-radius: 10px 10px 0 0;
   width: 100%;
-  height: 65%;
 }
 .liquors {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.submit, .readmore, .popup {
+.click, .readmore, .popup {
   background-color: pink;
   color: black;
 }
@@ -119,6 +119,11 @@ footer ul {
 .submit:active, .readmore:active {
   font-size: large;
 }
+ul {
+  list-style-type: none;
+  font-style: italic;
+}
+h3 { color: white;}
 
 /* Search */
 .search {
@@ -144,7 +149,7 @@ footer ul {
   height: 20vh;
 }
 
-/* class component */
+/* className = component */
 .component {
   width: 90vw;
 }
@@ -162,6 +167,7 @@ footer ul {
   color: pink;
   text-align: center;
   border-radius: 1%;
+  overflow-y: auto;
 }
 .popup-content img {
   border-radius: 1% 1% 0 0;
@@ -171,6 +177,7 @@ footer ul {
 }
 [role='tooltip'].popup-content {
   width: auto;
+  height: 70vh;
 }
 
 .popup-overlay {

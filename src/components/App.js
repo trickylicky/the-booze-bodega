@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 import NavBar from './NavBar'
 import {Routes, Route} from "react-router-dom"
 import Home from "./Home"
@@ -10,71 +11,42 @@ import Vodka from './Vodka'
 import Wine from './Wine'
 import Search from './Search'
 import Cart from './Cart'
+import { AppContext } from '../services/app-context'
+import { CSSTransition } from 'react-transition-group'
+import Modal from './Modal'
 
 function App() {
 
-  const [liquors, setLiquors] = useState([])
-  const [searchInput , setSearchInput] = useState([])
-  const [reviews, setReviews] = useState([])
-  const [cart, setCart] = useState([]);
-
-
-  const liquorsApi = "http://localhost:9292/liquors"
-  const reviewsApi = "http://localhost:9292/reviews"
-
-  // const API = "https://liquor-data.herokuapp.com/liquor" json-api
+  const { handleSearch, liquors, cart, getUserName } = useContext(AppContext);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
-    fetch(reviewsApi).then(res=> res.json()).then(data => setReviews(data)).catch(console.log)
+    const isUserPresent = getUserName();
+    if(!isUserPresent) setIsModalVisible(true);
+    else setIsModalVisible(false);
+    //eslint-disable-next-line
+  }, [])
 
-    if (searchInput.length > 0){
-      setLiquors(prevItems => prevItems.filter(liquor => liquor.title.toLowerCase().includes(searchInput.toLowerCase())));
-    } else {
-      fetch(liquorsApi).then(res=> res.json()).then(data => setLiquors(data)).catch(console.log)
-    } 
-   }, [reviews, searchInput])
-  
-  const wines = liquors.filter( liquor => liquor.category === "Wines" )
-  const whiskeys = liquors.filter( liquor => liquor.category === "Whiskey" )
-  const vodkas = liquors.filter( liquor => liquor.category === "Vodka" )
-  const gins = liquors.filter( liquor => liquor.category === "Gin" )
-
-  const handleSearch = e => setSearchInput(e.target.value)
-
-  // function addToCart(liquor) {
-  //   if (!cart.includes(liquor)) {
-  //     setCart([...cart, liquor])
-  //     fetch("http://localhost:9292/cart", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(liquor)
-  //     })
-  //   }
-  // }
-
-  // const handleDelete = e => {
-  //   fetch(reviewsApi+`/${e.target.id}`,{
-  //     method: "DELETE",
-  //     headers : {
-  //       "Content-Type": "application/json",
-  //       "Accept": "application/json"
-  //     }
-  //   })
-  // }
-
+  const ModalOverlay = () => {
+    const content = <CSSTransition in={isModalVisible} timeout={300} classNames='slide-in-left' mountOnEnter unmountOnExit><Modal setIsModalVisible={setIsModalVisible}></Modal></CSSTransition>
+    return (
+      ReactDOM.createPortal(content, document.getElementById('modal'))
+    )
+  }
 
   return (
     <div>
+      <ModalOverlay></ModalOverlay>
       <NavBar />
       <Search handleSearch ={handleSearch}/>
       <Routes>
-        <Route exact path='/' element={<Home products={liquors}/> } />
-        <Route path='/whiskey' element={<Whiskey whiskeys = {whiskeys} />} />
-        <Route path='/gin' element={<Gin gins= {gins} />} />
-        <Route path='/vodka' element={<Vodka vodkas = {vodkas} />} />
-        <Route path='/wine' element={<Wine wines = {wines} />} />
+        <Route exact path='/' element={<Home products={liquors} /> } />
+        <Route path='/whiskey' element={<Whiskey />} />
+        <Route path='/gin' element={<Gin />} />
+        <Route path='/vodka' element={<Vodka />} />
+        <Route path='/wine' element={<Wine />} />
         <Route path='/blog' element={<Blog />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/cart' element={<Cart savedItems ={cart} />} />
       </Routes>
       <Footer />
     </div>
