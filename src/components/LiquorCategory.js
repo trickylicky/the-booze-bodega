@@ -1,7 +1,7 @@
 import React from 'react'
 import Popup from 'reactjs-popup'
 
-function LiquorCategory({props, reviews, addToCArt}) {
+function LiquorCategory({props, reviews, addToCart}) {
 
   return (
     <div className='component liquors'>
@@ -26,10 +26,7 @@ function LiquorCategory({props, reviews, addToCArt}) {
                 </Popup> &emsp; &emsp; &emsp; &emsp;
                 <button 
                   className='click' 
-                  onClick={e => {
-                    alert('Item added to cart!')
-                    addToCArt(obj)
-                    }}>add to cart</button>
+                  onClick={e => addToCart(obj)}>add to cart</button>
             </main>
             )
           ) 
