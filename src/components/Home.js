@@ -1,14 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Liquor from './Liquor'
+import LiquorCategory from './LiquorCategory'
 
-function Home({products}) {
-
+function Home({products, addToCart}) {
+  
   return (
     <div className='component home'>
       <p className='first'>Discover Our Range</p>
-      <p className='second'>Subcategories</p>
-      <div className='subcategories'>
+      <p className='second'>Categories</p>
+      <div className='categories'>
         <NavLink to="/wine">
           <img src="../wines.jpeg" alt='wines' width="180px" height="120px" /> <br /><br />
            WINES
@@ -26,8 +26,9 @@ function Home({products}) {
            WHISKEYS
         </NavLink>
       </div>
+      <p className='second'>All Products</p>
       <div>
-        <Liquor props={products} />
+        <LiquorCategory props={products} addToCart={addToCart} />
       </div>
     </div>
   )

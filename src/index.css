@@ -1,5 +1,5 @@
 body {
-  width: 97vw;
+  width: 95vw;
   margin: auto;
   background-color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,26 +9,30 @@ body {
     -moz-osx-font-smoothing: grayscale;
   background: url(../public/bg2.jpg) no-repeat 0% 25vh;
   background-size: 100vw 40vh;
-  width: 90%;
   background-color: black;
 }
+
+/* paragraphs */
 .first {
   height: 30vh; 
   margin-top: 10vh;
   color: pink;
   text-align: center;
   font-size: 3em;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
  }
- .second {   color: pink; }
+ .second { 
+  color: pink;
+  margin: 0 0 3% 5%;
+ }
 
 /* Navbar */
 .navlinks {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 60vw;
-  margin-left: 10%;
+  width: 50vw;
+  margin-left: 5%;
 }
 .navh1 {
   color: rgb(155, 27, 47);
@@ -50,14 +54,12 @@ body {
 .navbar a:active {
   text-decoration: underline;
 }
-/* NavBar end */
-
 
 /* Footer */
 footer {
   background-color:rgb(155, 27, 47);
   color: white;
-  padding-bottom: 5px;
+  padding: 5px;
 }
 .sections {
   display: flex;
@@ -68,10 +70,7 @@ footer ul {
   line-height: 2em;
 }
 
-/* Footer end */
-
 /* Blog*/
-
 .article {
   display: flex;
   justify-content: space-evenly;
@@ -88,30 +87,29 @@ footer ul {
   width: 23vw;
 }
 
-/* Blog end */
-
 /* Liquor */
 #liquor {
   margin-bottom: 30px;
-  border: 2px whitesmoke solid;
+  border: 1px rgb(131, 125, 125) solid;
   width: 18vw;
   border-radius: 10px;
   color: pink;
-  height: 500px;
+  height: 56vh;
 }
 #liquor p {
   text-align: center;
 }
 #liquor img {
+  display: block;
+  border-radius: 10px 10px 0 0;
   width: 100%;
-  height: 65%;
 }
 .liquors {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.submit, .readmore {
+.click, .readmore, .popup {
   background-color: pink;
   color: black;
 }
@@ -121,65 +119,73 @@ footer ul {
 .submit:active, .readmore:active {
   font-size: large;
 }
-
-/* Liquor end  */
+ul {
+  list-style-type: none;
+  font-style: italic;
+}
+h3 { color: white;}
 
 /* Search */
 .search {
   position: absolute;
   left: 75%;
   top: 14%;
- 
 }
 
-/* end of Search*/
-
 /* Home */
-.subcategories {
+.categories {
   display: flex;
   justify-content: space-evenly;
 }
-.subcategories a {
+.categories a {
   text-decoration: none;
   text-align: center;
   color: pink;
   padding-bottom: 30px;
 
 }
-.subcategories a img:hover {
+.categories a img:hover {
   width: 20vw;
   height: 20vh;
 }
 
-/* End of Home */
-.ul {
-  list-style-type: none;
+/* className = component */
+.component {
+  width: 90vw;
 }
 
-/* AddReviews */
-
-.reviews {
-  text-align: center;
-  font-style: oblique;
-  margin: 80px 50px 50px;
-  font-size: 1.5em;
+/* Cart */
+#cart_icon  {
+  position: absolute;
+  left: 75%;
+  top: 6%;
 }
 
-form {
-  text-align: center;
-  margin-top: 50px; 
-}
-legend {
+/* Popups */
+.popup-content {
+  background: rgb(10, 10, 10);
   color: pink;
-  margin: 40px;
+  text-align: center;
+  border-radius: 1%;
+  overflow-y: auto;
 }
-textarea {
-  width: 50vw;
-  height: 30vh;
-  margin-bottom: 10px;
+.popup-content img {
+  border-radius: 1% 1% 0 0;
+}
+.popup-arrow {
+  color: rgb(255, 255, 255);
+}
+[role='tooltip'].popup-content {
+  width: auto;
+  height: 70vh;
 }
 
-/* End of AddReviews */
+.popup-overlay {
+  background: rgba(212, 211, 211, 0.5);
+}
+
+/* Media Queries */
+
 @media screen {
   
 }
