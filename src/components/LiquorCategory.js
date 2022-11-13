@@ -34,7 +34,7 @@ function LiquorCategory( {props} ) {
                       )
                     }
                   </ul>
-                </Popup> &emsp; &emsp; &emsp; &emsp;
+                </Popup> &emsp; &emsp;
                 <button 
                   className='click' 
                   onClick={ e => {
@@ -42,7 +42,10 @@ function LiquorCategory( {props} ) {
                     addToCart(obj, 'increase')}
                   }
                 >
-                  add to cart
+                  <i className="fa-solid fa-cart-shopping"></i>
+                </button>  &emsp; &emsp;
+                <button>
+                  <i class="fa-solid fa-pen"></i>               
                 </button>
               </main>
             )}
