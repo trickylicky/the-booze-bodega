@@ -1,7 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Liquor from './Liquor'
 
-function Home() {
+function Home({products}) {
 
   return (
     <div className='component home'>
@@ -24,6 +25,9 @@ function Home() {
           <img src="../whiskeys.jpeg" alt='whiskeys' width="180px" height="120px" /> <br /><br />
            WHISKEYS
         </NavLink>
+      </div>
+      <div>
+        <Liquor props={products} />
       </div>
     </div>
   )

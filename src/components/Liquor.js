@@ -15,7 +15,7 @@ function LiquorCategory({props}) {
                   {obj.description} <br /><br />
                   <span style={{color:'red', fontSize: 'large'}}>KSh. {obj.price}</span> <br /> <br />
                   <NavLink to='/addreview'>
-                    <button className='submit' type='click'>Add review</button>
+                    <button className='submit' type='click'>More Details</button>
                   </NavLink>
                 </p>
             </main>
