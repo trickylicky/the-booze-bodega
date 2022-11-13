@@ -4,7 +4,7 @@ import BlogArticle from './BlogArticle'
 function Blog() {
   return (
     <div className='blog'>
-      <p className='first'>Blog</p>
+      <p className='first'>Our Blogs</p>
         <div className='article'>
           <BlogArticle />
         </div>

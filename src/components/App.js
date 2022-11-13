@@ -9,8 +9,6 @@ import Gin from './Gin'
 import Vodka from './Vodka'
 import Wine from './Wine'
 import Search from './Search'
-import Reviews from './Reviews'
-import AddReview from '../AddReview'
 
 function App() {
 
@@ -35,15 +33,15 @@ function App() {
   
   const handleSearch = e => setSearchInput(e.target.value)
 
-  const handleDelete = e => {
-    fetch(reviewsApi+`/${e.target.id}`,{
-      method: "DELETE",
-      headers : {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      }
-    })
-  }
+  // const handleDelete = e => {
+  //   fetch(reviewsApi+`/${e.target.id}`,{
+  //     method: "DELETE",
+  //     headers : {
+  //       "Content-Type": "application/json",
+  //       "Accept": "application/json"
+  //     }
+  //   })
+  // }
 
   const products =liquors
   const wines = liquors.filter( liquor => liquor.category === "Wines" )
@@ -62,9 +60,7 @@ function App() {
         <Route path='/vodka' element={<Vodka vodkas = {vodkas} />} />
         <Route path='/wine' element={<Wine wines = {wines} />} />
         <Route path='/blog' element={<Blog />} />
-        <Route path='/addreview' element={<AddReview setReviews = {setReviews} reviewsApi={reviewsApi} />} />
       </Routes>
-      <Reviews handleDelete={handleDelete} reviews = {reviews} />      
       <Footer />
     </div>
   )
