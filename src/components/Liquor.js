@@ -18,9 +18,11 @@ function LiquorCategory({props, reviews}) {
                   <p> 
                     <b>{obj.title}</b><br /><br />
                     {obj.description} <br /><br />
-                    <span style={{color:'red', fontSize: 'large'}}>KSh. {obj.price}</span> <br /> <br />
+                    Price : &nbsp;<span style={{color:'red', fontSize: 'large'}}> Ksh. {obj.price}</span> <br /> <br />
                   </p>
-                  <p>reviews</p>
+                  <ul>
+                    {reviews}
+                  </ul>
                 </Popup> &emsp; &emsp; &emsp; &emsp;
                 <button className='popup'>add to cart</button>
             </main>

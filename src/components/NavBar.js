@@ -12,7 +12,7 @@ function NavBar() {
           <NavLink to='/vodka' > VODKA </NavLink>
           <NavLink to='/wine' > WINE </NavLink>
           <NavLink to='/blog' > BLOG </NavLink>
-          <NavLink to='/cart' id='cart_icon'> <i class="fa-solid fa-cart-shopping"></i> </NavLink>
+          <NavLink to='/cart' id='cart_icon'> <i className="fa-solid fa-cart-shopping"></i> </NavLink>
 
         </div>
     </nav>
