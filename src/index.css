@@ -109,7 +109,7 @@ footer ul {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.submit, .readmore, .popup {
+.click, .readmore, .popup {
   background-color: pink;
   color: black;
 }
