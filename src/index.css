@@ -54,7 +54,6 @@ body {
 .navbar a:active {
   text-decoration: underline;
 }
-/* NavBar end */
 
 /* Footer */
 footer {
@@ -70,7 +69,6 @@ footer ul {
   list-style-type: none;
   line-height: 2em;
 }
-/* Footer end */
 
 /* Blog*/
 .article {
@@ -88,21 +86,21 @@ footer ul {
   display: inline-block;
   width: 23vw;
 }
-/* Blog end */
 
 /* Liquor */
 #liquor {
   margin-bottom: 30px;
-  border: 2px whitesmoke solid;
+  border: 1px rgb(131, 125, 125) solid;
   width: 18vw;
   border-radius: 10px;
   color: pink;
-  height: 500px;
+  height: auto;
 }
 #liquor p {
   text-align: center;
 }
 #liquor img {
+  border-radius: 10px 10px 0 0;
   width: 100%;
   height: 65%;
 }
@@ -111,7 +109,7 @@ footer ul {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.submit, .readmore {
+.submit, .readmore, .popup {
   background-color: pink;
   color: black;
 }
@@ -121,7 +119,6 @@ footer ul {
 .submit:active, .readmore:active {
   font-size: large;
 }
-/* Liquor end  */
 
 /* Search */
 .search {
@@ -129,7 +126,6 @@ footer ul {
   left: 75%;
   top: 14%;
 }
-/* end of Search*/
 
 /* Home */
 .categories {
@@ -148,11 +144,41 @@ footer ul {
   height: 20vh;
 }
 
-/* End of Home */
-
-.whiskey, .wine, .vodka, .gin, .blog, .home {
+/* class component */
+.component {
   width: 90vw;
 }
+
+/* Cart */
+#cart_icon  {
+  position: absolute;
+  left: 75%;
+  top: 6%;
+}
+
+/* Popups */
+.popup-content {
+  background: rgb(10, 10, 10);
+  color: pink;
+  text-align: center;
+  border-radius: 1%;
+}
+.popup-content img {
+  border-radius: 1% 1% 0 0;
+}
+.popup-arrow {
+  color: rgb(255, 255, 255);
+}
+[role='tooltip'].popup-content {
+  width: auto;
+}
+
+.popup-overlay {
+  background: rgba(212, 211, 211, 0.5);
+}
+
+/* Media Queries */
+
 @media screen {
   
 }
