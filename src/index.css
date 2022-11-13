@@ -9,7 +9,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
   background: url(../public/bg2.jpg) no-repeat 0% 25vh;
   background-size: 100vw 40vh;
-  width: 90%;
   background-color: black;
 }
 .first {
@@ -57,7 +56,7 @@ body {
 footer {
   background-color:rgb(155, 27, 47);
   color: white;
-  padding-bottom: 5px;
+  padding: 5px;
 }
 .sections {
   display: flex;
@@ -127,7 +126,7 @@ footer ul {
 /* Search */
 .search {
   position: absolute;
-  left: 75%;
+  left: 80%;
   top: 14%;
  
 }
@@ -180,6 +179,10 @@ textarea {
 }
 
 /* End of AddReviews */
+
+.whiskey, .wine, .vodka, .gin, .blog {
+  width: 90vw;
+}
 @media screen {
   
 }
