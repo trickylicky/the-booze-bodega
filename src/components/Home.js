@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import LiquorCtaegory from './LiquorCategory'
+import LiquorCategory from './LiquorCategory'
 
 function Home({products}) {
 
@@ -26,8 +26,9 @@ function Home({products}) {
            WHISKEYS
         </NavLink>
       </div>
+      <p className='second'>All Products</p>
       <div>
-        <LiquorCtaegory props={products} />
+        <LiquorCategory props={products} />
       </div>
     </div>
   )

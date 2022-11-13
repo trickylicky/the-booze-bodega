@@ -14,7 +14,7 @@ import Cart from './Cart'
 function App() {
 
   const [liquors, setLiquors] = useState([])
-  const [searchInput , setSearchInput] = useState([])
+  const [searchInput , setSearchInput] = useState('')
   const [reviews, setReviews] = useState([])
   const [cart, setCart] = useState([]);
 
@@ -41,16 +41,16 @@ function App() {
 
   const handleSearch = e => setSearchInput(e.target.value)
 
-  // function addToCart(liquor) {
-  //   if (!cart.includes(liquor)) {
-  //     setCart([...cart, liquor])
-  //     fetch("http://localhost:9292/cart", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(liquor)
-  //     })
-  //   }
-  // }
+  function addToCart(liquor) {
+    if (!cart.includes(liquor)) {
+      setCart([...cart, liquor])
+      fetch("http://localhost:9292/cart", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(liquor)
+      })
+    }
+  }
 
   // const handleDelete = e => {
   //   fetch(reviewsApi+`/${e.target.id}`,{
@@ -68,13 +68,34 @@ function App() {
       <NavBar />
       <Search handleSearch ={handleSearch}/>
       <Routes>
-        <Route exact path='/' element={<Home products={liquors} reviews={reviews} /> } />
-        <Route path='/whiskey' element={<Whiskey whiskeys = {whiskeys} reviews={reviews}  />} />
-        <Route path='/gin' element={<Gin gins= {gins} reviews={reviews}  />} />
-        <Route path='/vodka' element={<Vodka vodkas = {vodkas} reviews={reviews}  />} />
-        <Route path='/wine' element={<Wine wines = {wines} reviews={reviews}  />} />
-        <Route path='/blog' element={<Blog />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route 
+          exact path='/' 
+          element={<Home products={liquors} reviews={reviews} addToCart={addToCart} /> }
+        />
+        <Route 
+          path='/whiskey' 
+          element={<Whiskey whiskeys = {whiskeys} reviews={reviews} addToCart={addToCart}  />} 
+        />
+        <Route 
+          path='/gin' 
+          element={<Gin gins= {gins} reviews={reviews} addToCart={addToCart}  />} 
+        />
+        <Route 
+          path='/vodka' 
+          element={<Vodka vodkas = {vodkas} reviews={reviews} addToCart={addToCart}  />} 
+        />
+        <Route 
+          path='/wine' 
+          element={<Wine wines = {wines} reviews={reviews} addToCart={addToCart}  />} 
+        />
+        <Route 
+          path='/blog' 
+          element={<Blog />} 
+        />
+        <Route 
+          path='/cart' 
+          element={<Cart savedItems ={cart} />} 
+        />
       </Routes>
       <Footer />
     </div>
