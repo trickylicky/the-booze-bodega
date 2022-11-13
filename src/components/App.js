@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 import NavBar from './NavBar'
 import {Routes, Route} from "react-router-dom"
 import Home from "./Home"
@@ -11,27 +12,31 @@ import Wine from './Wine'
 import Search from './Search'
 import Cart from './Cart'
 import { AppContext } from '../services/app-context'
+import { CSSTransition } from 'react-transition-group'
+import Modal from './Modal'
 
 function App() {
 
-  const { handleSearch, liquors, cart } = useContext(AppContext);
-  // const API = "https://liquor-data.herokuapp.com/liquor" json-api
+  const { handleSearch, liquors, cart, getUserName } = useContext(AppContext);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
-  
+  useEffect(() => {
+    const isUserPresent = getUserName();
+    if(!isUserPresent) setIsModalVisible(true);
+    else setIsModalVisible(false);
+    //eslint-disable-next-line
+  }, [])
 
-  // const handleDelete = e => {
-  //   fetch(reviewsApi+`/${e.target.id}`,{
-  //     method: "DELETE",
-  //     headers : {
-  //       "Content-Type": "application/json",
-  //       "Accept": "application/json"
-  //     }
-  //   })
-  // }
-
+  const ModalOverlay = () => {
+    const content = <CSSTransition in={isModalVisible} timeout={300} classNames='slide-in-left' mountOnEnter unmountOnExit><Modal setIsModalVisible={setIsModalVisible}></Modal></CSSTransition>
+    return (
+      ReactDOM.createPortal(content, document.getElementById('modal'))
+    )
+  }
 
   return (
     <div>
+      <ModalOverlay></ModalOverlay>
       <NavBar />
       <Search handleSearch ={handleSearch}/>
       <Routes>
