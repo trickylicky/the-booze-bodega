@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Popup from 'reactjs-popup'
+import { AppContext } from '../services/app-context'
 
-function LiquorCategory({props, reviews, addToCart}) {
+function LiquorCategory( {props} ) {
+
+  const { reviews, addToCart } = useContext(AppContext);
 
   return (
     <div className='component liquors'>
         {
-          props.map(obj => (
+          props.map(obj => {
+
+            return(
     
-            <main id='liquor' key={obj.id}>
+              <main id='liquor' key={obj.id}>
                 <img src={obj.image_url} alt={obj.title} />
                 <p className='liquor_details'> 
                   <b>{obj.title}</b>
@@ -21,14 +26,26 @@ function LiquorCategory({props, reviews, addToCart}) {
                     Price : &nbsp; <span style={{color:'red', fontSize: 'large'}}> Ksh. {obj.price}</span> <br /> <br />
                   </p>
                   <ul>
-                    {reviews}
+                  <h3>Users Reviews</h3>
+                    {
+                      reviews.filter(review => review.liquor_id === obj.id)
+                      .map(review => review.length === 0 ? <li>There are no reviews added yet</li> : 
+                        <li key={review.id}>{review.comment}</li>
+                      )
+                    }
                   </ul>
                 </Popup> &emsp; &emsp; &emsp; &emsp;
                 <button 
                   className='click' 
-                  onClick={e => addToCart(obj)}>add to cart</button>
-            </main>
-            )
+                  onClick={ e => {
+                    alert ("Item added to cart")
+                    addToCart(obj, 'increase')}
+                  }
+                >
+                  add to cart
+                </button>
+              </main>
+            )}
           ) 
         }
     </div>
