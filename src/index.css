@@ -119,6 +119,11 @@ footer ul {
 .submit:active, .readmore:active {
   font-size: large;
 }
+ul {
+  list-style-type: none;
+  font-style: italic;
+}
+h3 { color: white;}
 
 /* Search */
 .search {
