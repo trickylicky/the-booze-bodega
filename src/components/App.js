@@ -10,6 +10,7 @@ import Vodka from './Vodka'
 import Wine from './Wine'
 import Search from './Search'
 import Cart from './Cart'
+import { CartItem } from '../models/cart-item'
 
 function App() {
 
@@ -23,6 +24,28 @@ function App() {
   const reviewsApi = "http://localhost:9292/reviews"
 
   // const API = "https://liquor-data.herokuapp.com/liquor" json-api
+
+  const getCartHandler = async () => {
+    const parsedCart = localStorage.getItem('cart');
+    if(!parsedCart) {
+     const stringedCart = await JSON.stringify([]);
+     localStorage.setItem('cart', stringedCart); 
+     setCart([]);
+    }
+    else {
+      const parsed = await JSON.parse(parsedCart);
+      setCart(parsed);
+    }
+  }
+
+  useEffect(() => {
+    getCartHandler();
+    //eslint-disable-next-line
+  }, [])
+
+  useEffect(() => {
+    addToCart();
+  }, [cart])
 
   useEffect(() => {
     fetch(reviewsApi).then(res=> res.json()).then(data => setReviews(data)).catch(console.log)
@@ -41,16 +64,39 @@ function App() {
 
   const handleSearch = e => setSearchInput(e.target.value)
 
-  function addToCart(liquor) {
-    if (!cart.includes(liquor)) {
-      setCart([...cart, liquor])
-      fetch("http://localhost:9292/cart", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(liquor)
-      })
+  async function addToCart(liquor, method) {
+    const foundItem = cart.find((item) => item.id === liquor.id);
+    let cartToParse = cart;
+    if(!foundItem) {
+        const newCartItem = new CartItem(liquor.id, liquor.title, 1, liquor.price, liquor.price);
+        cartToParse = [...cart, newCartItem];
+        setCart(prevCart => [...prevCart, newCartItem]);
     }
-  }
+    else if(foundItem) {
+        if(method === 'increase') {
+            const foundItemIndex = cart.findIndex((item) => item.id === foundItem.id);
+            const updatedCartItem = { ...foundItem, totalAmount: foundItem.totalAmount + foundItem.price, quantity: foundItem.quantity++ };
+            const updatedCart = cart;
+            updatedCart[foundItemIndex] = updatedCartItem;
+            cartToParse = updatedCart;
+            setCart(updatedCart);
+        } else if(method === 'decrease') {
+            if(foundItem.quantity === 1) {
+                cartToParse = cart.filter(cItem => cItem.id !== foundItem.id);
+                setCart(prevCart => prevCart.filter((cartItem) => cartItem.id !== foundItem.id));
+            } else if(foundItem.quantity > 1) {
+                const foundItemIndex = cart.findIndex((item) => item.id === foundItem.id);
+                const updatedCartItem = { ...foundItem, totalAmount: foundItem.totalAmount - foundItem.price, quantity: foundItem.quantity-- };
+                const updatedCart = cart;
+                cartToParse = updatedCart;
+                updatedCart[foundItemIndex] = updatedCartItem;
+            }
+
+        }
+    }
+    const stringCart = await JSON.stringify(cartToParse);
+    localStorage.setItem('cart', stringCart);
+}
 
   // const handleDelete = e => {
   //   fetch(reviewsApi+`/${e.target.id}`,{
