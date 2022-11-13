@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../services/app-context'
+import LiquorCategory from './LiquorCategory'
 
-function Cart( savedItems) {
+function Cart() {
+  const { savedItems, addToCart } = useContext(AppContext)
+
     console.log(savedItems)
   return (
     <div className='component cart'>
