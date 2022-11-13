@@ -45,7 +45,7 @@ function LiquorCategory( {props} ) {
                   <i className="fa-solid fa-cart-shopping"></i>
                 </button>  &emsp; &emsp;
                 <button>
-                  <i class="fa-solid fa-pen"></i>               
+                  <i className="fa-solid fa-pen" style={{color: "blue"}}></i>               
                 </button>
               </main>
             )}
