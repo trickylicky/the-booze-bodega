@@ -18,7 +18,7 @@ function LiquorCategory({props, reviews}) {
                   <p> 
                     <b>{obj.title}</b><br /><br />
                     {obj.description} <br /><br />
-                    Price : &nbsp;<span style={{color:'red', fontSize: 'large'}}> Ksh. {obj.price}</span> <br /> <br />
+                    Price : &nbsp; <span style={{color:'red', fontSize: 'large'}}> Ksh. {obj.price}</span> <br /> <br />
                   </p>
                   <ul>
                     {reviews}
