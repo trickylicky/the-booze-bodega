@@ -7,8 +7,8 @@ function Home({products}) {
   return (
     <div className='component home'>
       <p className='first'>Discover Our Range</p>
-      <p className='second'>Subcategories</p>
-      <div className='subcategories'>
+      <p className='second'>Categories</p>
+      <div className='categories'>
         <NavLink to="/wine">
           <img src="../wines.jpeg" alt='wines' width="180px" height="120px" /> <br /><br />
            WINES

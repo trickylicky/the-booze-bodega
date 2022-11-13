@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import Popup from 'reactjs-popup'
 
 function LiquorCategory({props}) {
 
@@ -14,9 +14,15 @@ function LiquorCategory({props}) {
                   <b>{obj.title}</b><br /><br />
                   {obj.description} <br /><br />
                   <span style={{color:'red', fontSize: 'large'}}>KSh. {obj.price}</span> <br /> <br />
-                  <NavLink to='/addreview'>
-                    <button className='submit' type='click'>More Details</button>
-                  </NavLink>
+                  <Popup trigger={<button className='popup'> view</button>} position="center center">
+                    <img src={obj.image_url} alt={obj.title} />
+                    <p> 
+                      <b>{obj.title}</b><br /><br />
+                      {obj.description} <br /><br />
+                      <span style={{color:'red', fontSize: 'large'}}>KSh. {obj.price}</span> <br /> <br />
+                    </p>
+                  </Popup> &emsp; &emsp; &emsp; &emsp;
+                  <button className='popup'>add to cart</button>
                 </p>
             </main>
             )
