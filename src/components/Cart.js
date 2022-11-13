@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Cart() {
+function Cart( savedItems) {
   return (
     <div className='component cart'>
         <p className='first'> View Saved Items</p>
