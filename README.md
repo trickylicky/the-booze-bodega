@@ -23,8 +23,14 @@ This application is designed to help revellers  get their share of fun at their 
 ### CAPTIVATING SOLUTION
 We help the user know what booze he/she might like and try it out according to other people's reviews.
 
+### PROJECT REVIEW
+In this application a user is ableto search for any booze,add it to cart and leave a review on it.
+
 ### Requirements
  - Either a computer, Ipad, tablet or phone -An access to internet connection
+
+### INSTALLATION
+npm install -> npm run server -> npm start
 
 ### Technology used
 
