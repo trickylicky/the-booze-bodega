@@ -11,32 +11,32 @@ import Vodka from './Vodka'
 import Wine from './Wine'
 import Search from './Search'
 import Cart from './Cart'
-import { AppContext } from '../services/app-context'
-import { CSSTransition } from 'react-transition-group'
-import Modal from './Modal'
+// import { AppContext } from '../services/app-context'
+// import { CSSTransition } from 'react-transition-group'
+// import Modal from './Modal'
 
 function App() {
 
-  const {getUserName } = useContext(AppContext);
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  // const {getUserName } = useContext(AppContext);
+  // const [isModalVisible, setIsModalVisible] = useState(false);
 
-  useEffect(() => {
-    const isUserPresent = getUserName();
-    if(!isUserPresent) setIsModalVisible(true);
-    else setIsModalVisible(false);
-    //eslint-disable-next-line
-  }, [])
+  // useEffect(() => {
+  //   const isUserPresent = getUserName();
+  //   if(!isUserPresent) setIsModalVisible(true);
+  //   else setIsModalVisible(false);
+  //   //eslint-disable-next-line
+  // }, [])
 
-  const ModalOverlay = () => {
-    const content = <CSSTransition in={isModalVisible} timeout={300} classNames='slide-in-left' mountOnEnter unmountOnExit><Modal setIsModalVisible={setIsModalVisible}></Modal></CSSTransition>
-    return (
-      ReactDOM.createPortal(content, document.getElementById('modal'))
-    )
-  }
+  // const ModalOverlay = () => {
+  //   const content = <CSSTransition in={isModalVisible} timeout={300} classNames='slide-in-left' mountOnEnter unmountOnExit><Modal setIsModalVisible={setIsModalVisible}></Modal></CSSTransition>
+  //   return (
+  //     ReactDOM.createPortal(content, document.getElementById('modal'))
+  //   )
+  // }
 
   return (
     <div>
-      <ModalOverlay></ModalOverlay>
+      {/* <ModalOverlay></ModalOverlay> */}
       <NavBar />
       <Search />
       <Routes>
