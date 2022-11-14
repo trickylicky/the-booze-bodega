@@ -6,7 +6,7 @@ function Search( { handleSearch} ) {
      <div className="search">
     <input
       type="text"
-      placeholder="Search..."
+      placeholder="search liquor name..."
       onChange={(e) => handleSearch(e)}
     />
   </div>

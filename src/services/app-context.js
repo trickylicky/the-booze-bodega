@@ -11,33 +11,37 @@ const AppContextProvider = ({ children }) => {
   const [name, setName] = useState('');
 
 
-  const liquorsApi = "http://localhost:9292/liquors"
-  const reviewsApi = "http://localhost:9292/reviews"
+  // Our Hosted backend APIs.
+
+  const liquorsApi = "https://fierce-gorge-06316.herokuapp.com/liquors"
+  
+  const reviewsApi = "https://fierce-gorge-06316.herokuapp.com/reviews"
+  
 
   const getCartHandler = async () => {
-    const parsedCart = localStorage.getItem('cart');
+    const parsedCart = localStorage.getItem('cart')
     if(!parsedCart) {
-     const stringedCart = await JSON.stringify([]);
-     localStorage.setItem('cart', stringedCart); 
-     setCart([]);
+     const stringedCart = await JSON.stringify([])
+     localStorage.setItem('cart', stringedCart)
+     setCart([])
     }
     else {
-      const parsed = await JSON.parse(parsedCart);
-      setCart(parsed);
+      const parsed = await JSON.parse(parsedCart)
+      setCart(parsed)
     }
   }
 
   const getUserName = () => {
-    const foundUser = localStorage.getItem('user');
-    if(!foundUser) return false;
+    const foundUser = localStorage.getItem('user')
+    if(!foundUser) return false
     if(foundUser) {
-      setName(foundUser);
-      return true;
+      setName(foundUser)
+      return true
     }
   }
 
   useEffect(() => {
-    getCartHandler();
+    getCartHandler()
     fetch(reviewsApi).then(res=> res.json()).then(data => setReviews(data)).catch(console.log)
     //eslint-disable-next-line
   }, []);
@@ -60,38 +64,38 @@ const AppContextProvider = ({ children }) => {
   const handleSearch = e => setSearchInput(e.target.value)
 
   async function addToCart(liquor, method) {
-    const foundItem = cart.find((item) => item.id === liquor.id);
-    let cartToParse = cart;
+    const foundItem = cart.find(item => item.id === liquor.id)
+    let cartToParse = cart
     if(!foundItem) {
-        const newCartItem = new CartItem(liquor.id, liquor.title, 1, liquor.price, liquor.price);
-        cartToParse = [...cart, newCartItem];
-        setCart(prevCart => [...prevCart, newCartItem]);
+        const newCartItem = new CartItem(liquor.id, liquor.title, 1, liquor["image_url"], liquor.price, liquor.price )
+        cartToParse = [...cart, newCartItem]
+        setCart(prevCart => [...prevCart, newCartItem])
     }
     else if(foundItem) {
         if(method === 'increase') {
-            const foundItemIndex = cart.findIndex((item) => item.id === foundItem.id);
-            const updatedCartItem = { ...foundItem, totalAmount: foundItem.totalAmount + foundItem.price, quantity: foundItem.quantity + 1 };
-            const updatedCart = cart;
-            updatedCart[foundItemIndex] = updatedCartItem;
-            cartToParse = updatedCart;
-            setCart(updatedCart);
+            const foundItemIndex = cart.findIndex((item) => item.id === foundItem.id)
+            const updatedCartItem = { ...foundItem, totalAmount: foundItem.totalAmount + foundItem.price, quantity: foundItem.quantity + 1 }
+            const updatedCart = cart
+            updatedCart[foundItemIndex] = updatedCartItem
+            cartToParse = updatedCart
+            setCart(updatedCart)
         } else if(method === 'decrease') {
             if(foundItem.quantity === 1) {
-                cartToParse = cart.filter(cItem => cItem.id !== foundItem.id);
-                setCart(prevCart => prevCart.filter((cartItem) => cartItem.id !== foundItem.id));
+                cartToParse = cart.filter(cItem => cItem.id !== foundItem.id)
+                setCart(prevCart => prevCart.filter((cartItem) => cartItem.id !== foundItem.id))
             } else if(foundItem.quantity > 1) {
-                const foundItemIndex = cart.findIndex((item) => item.id === foundItem.id);
-                const updatedCartItem = { ...foundItem, totalAmount: foundItem.totalAmount - foundItem.price, quantity: foundItem.quantity - 1 };
-                const updatedCart = cart;
-                cartToParse = updatedCart;
-                updatedCart[foundItemIndex] = updatedCartItem;
+                const foundItemIndex = cart.findIndex((item) => item.id === foundItem.id)
+                const updatedCartItem = { ...foundItem, totalAmount: foundItem.totalAmount - foundItem.price, quantity: foundItem.quantity - 1 }
+                const updatedCart = cart
+                cartToParse = updatedCart
+                updatedCart[foundItemIndex] = updatedCartItem
             }
         }
     }
-    const stringCart = await JSON.stringify(cartToParse);
-    localStorage.setItem('cart', stringCart);
+    const stringCart = await JSON.stringify(cartToParse)
+    localStorage.setItem('cart', stringCart)
 }
-    const value = { name, setName, getUserName, wines, cart, liquors, handleSearch, reviews, addToCart, whiskeys, gins, vodkas };
+    const value = { name, setName, getUserName, wines, cart, liquors, handleSearch, reviews, addToCart, whiskeys, gins, vodkas }
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>
 }
 
