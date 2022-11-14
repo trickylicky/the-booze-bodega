@@ -9,7 +9,7 @@ function Cart() {
 
   return (
     <div className='component cart'>
-        <p className='first'> View Saved Items</p>
+        <p className='first'> Here is a list of your saved items.</p>
         <LiquorCategory props={cart} addToCart={addToCart} />
     </div>
   )
