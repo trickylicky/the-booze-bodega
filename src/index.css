@@ -161,13 +161,12 @@ h3 { color: white;}
   top: 6%;
 }
 
-/* Popups */
+/* Popup Modal */
 .popup-content {
   background: rgb(10, 10, 10);
   color: pink;
   text-align: center;
   border-radius: 1%;
-  overflow-y: auto;
 }
 .popup-content img {
   border-radius: 1% 1% 0 0;
@@ -177,13 +176,17 @@ h3 { color: white;}
 }
 [role='tooltip'].popup-content {
   width: auto;
-  height: 70vh;
+  height: auto;
 }
 
 .popup-overlay {
   background: rgba(212, 211, 211, 0.5);
 }
 
+.popup_buttons {
+  display: flex;
+  justify-content: space-between;
+}
 /* Media Queries */
 
 @media screen {
