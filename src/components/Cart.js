@@ -48,72 +48,74 @@ const handleSubmit = (e, id) => {
 
   return (
     <div className='component cart'>
-      <p className='first'> Your saved items.</p>
-      {cart.map(obj => {
-        return(
-          <main id='liquor' key={obj.id}>
-            <img src={obj.image_url} alt={obj.title} />
-            <p className='liquor_details'> <b>{obj.title}</b> </p> <br />
-            <div className='popup_buttons'>
+      <p className='first' style={{marginBottom : "100px"}}> Your saved items.</p>
+      <div className='saveditems'>
+        {cart.map(obj => {
+          return(
+            <main id='liquor' key={obj.id}>
+              <img src={obj.image_url} alt={obj.title} />
+              <p className='liquor_details'> <b>{obj.title}</b> </p> <br />
+              <div className='popup_buttons'>
 
-              <Popup
-                trigger={<button className='popup'> more details</button>} 
-                position="center center"
-              >
-                <img src={obj.image_url} alt={obj.title} />
-                <p> 
-                  <b>{obj.title}</b>  <br /><br />
-                  {obj.description}   <br /><br />
-                  Price : &nbsp; <span style={{color:'red', fontSize: 'large'}}> Ksh. {obj.price}</span> <br /> <br />
-                  Item has been added {obj.quantity} times.
-                </p>
-                <ul>
-                  <h3>Users Reviews</h3> <hr />
-                  {
-                    reviews.filter(review => review.liquor_id === obj.id)
-                    .map(review =>  review.length === 0 ? <h4>There are no reviews yet.</h4> : 
-                    <li key={review.id}>
-                      {review.comment}  &emsp;
-                      <button type='click' id={review.id} onClick={e => handleDelete(e)} style={{color:"black", background:"red"}}>
-                        X
-                      </button>
-                    </li>
-                    )
+                <Popup
+                  trigger={<button className='popup'> more details</button>} 
+                  position="center center"
+                >
+                  <img src={obj.image_url} alt={obj.title} />
+                  <p> 
+                    <b>{obj.title}</b>  <br /><br />
+                    {obj.description}   <br /><br />
+                    Price : &nbsp; <span style={{color:'red', fontSize: 'large'}}> Ksh. {obj.price}</span> <br /> <br />
+                    Item has been added {obj.quantity} times.
+                  </p>
+                  <ul>
+                    <h3>Users Reviews</h3> <hr />
+                    {
+                      reviews.filter(review => review.liquor_id === obj.id)
+                      .map(review =>  review.length === 0 ? <h4>There are no reviews yet.</h4> : 
+                      <li key={review.id}>
+                        {review.comment}  &emsp;
+                        <button type='click' id={review.id} onClick={e => handleDelete(e)} style={{color:"black", background:"red"}}>
+                          X
+                        </button>
+                      </li>
+                      )
+                    }
+                  </ul> <br /> <br />
+                </Popup>
+                <button 
+                  className='click' 
+                  onClick={ e => {
+                    alert ("Item removed from cart")
+                    addToCart(obj, 'decrease')}
                   }
-                </ul> <br /> <br />
-              </Popup>
-              <button 
-                className='click' 
-                onClick={ e => {
-                  alert ("Item removed from cart")
-                  addToCart(obj, 'decrease')}
-                }
-              >
-                <i className="fa-solid fa-cart-shopping"></i>
-              </button> 
+                >
+                  <i className="fa-solid fa-cart-shopping"></i>
+                </button> 
 
-              <Popup 
-                trigger={<button className='popup'> <i className="fa-sharp fa-solid fa-feather-pointed"></i>
-                </button>} 
-                position="left bottom"
-                >  <br />
-                <form onSubmit={e => handleSubmit(e, obj.id)} target="">
-                  <label for="reviews"> Leave a review(s) <br /> <br />
-                    <textarea 
-                      name="comment" 
-                      onChange={e => handleChange(e)} 
-                      placeholder='Share your thoughts on this liquor...' 
-                      style={{height: '100px', width: "200px"}}
-                    >
-                    </textarea>
-                  </label>  <br /> <br />
-                  <input type='submit' value='add' />
-                </form> <br /> <br />
-              </Popup>
-            </div>
-          </main>
-        )
-      })}
+                <Popup 
+                  trigger={<button className='popup'> <i className="fa-sharp fa-solid fa-feather-pointed"></i>
+                  </button>} 
+                  position="left bottom"
+                  >  <br />
+                  <form onSubmit={e => handleSubmit(e, obj.id)} target="">
+                    <label for="reviews"> Leave a review(s) <br /> <br />
+                      <textarea 
+                        name="comment" 
+                        onChange={e => handleChange(e)} 
+                        placeholder='Share your thoughts on this liquor...' 
+                        style={{height: '100px', width: "200px"}}
+                      >
+                      </textarea>
+                    </label>  <br /> <br />
+                    <input type='submit' value='add' />
+                  </form> <br /> <br />
+                </Popup>
+              </div>
+            </main>
+          )
+        })}
+      </div>
     
       
     </div>
