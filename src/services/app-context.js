@@ -31,14 +31,14 @@ const AppContextProvider = ({ children }) => {
     }
   }
 
-  const getUserName = () => {
-    const foundUser = localStorage.getItem('user')
-    if(!foundUser) return false
-    if(foundUser) {
-      setName(foundUser)
-      return true
-    }
-  }
+  // const getUserName = () => {
+  //   const foundUser = localStorage.getItem('user')
+  //   if(!foundUser) return false
+  //   if(foundUser) {
+  //     setName(foundUser)
+  //     return true
+  //   }
+  // }
 
   useEffect(() => {
     getCartHandler()
@@ -102,7 +102,7 @@ const AppContextProvider = ({ children }) => {
     const stringCart = await JSON.stringify(cartToParse)
     localStorage.setItem('cart', stringCart)
 }
-    const value = { name, setName, getUserName, wines, cart, liquors, handleSearch, handleDelete, reviews, addToCart, whiskeys, gins, vodkas }
+    const value = { name, setName, wines, cart, liquors, handleSearch, handleDelete, reviews, addToCart, whiskeys, gins, vodkas }
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>
 }
 
