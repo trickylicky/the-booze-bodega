@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../services/app-context'
 
 
-function Search( { handleSearch} ) {
+function Search() {
+  const { handleSearch } = useContext(AppContext)
+
    return (
      <div className="search">
     <input

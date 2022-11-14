@@ -31,18 +31,17 @@ const AppContextProvider = ({ children }) => {
     }
   }
 
-  const getUserName = () => {
-    const foundUser = localStorage.getItem('user')
-    if(!foundUser) return false
-    if(foundUser) {
-      setName(foundUser)
-      return true
-    }
-  }
+  // const getUserName = () => {
+  //   const foundUser = localStorage.getItem('user')
+  //   if(!foundUser) return false
+  //   if(foundUser) {
+  //     setName(foundUser)
+  //     return true
+  //   }
+  // }
 
   useEffect(() => {
     getCartHandler()
-    fetch(reviewsApi).then(res=> res.json()).then(data => setReviews(data)).catch(console.log)
     //eslint-disable-next-line
   }, []);
 
@@ -53,8 +52,9 @@ const AppContextProvider = ({ children }) => {
       setLiquors(prevItems => prevItems.filter(liquor => liquor.title.toLowerCase().includes(searchInput.toLowerCase())));
     } else {
       fetch(liquorsApi).then(res=> res.json()).then(data => setLiquors(data)).catch(console.log)
+      fetch(reviewsApi).then(res=> res.json()).then(data => setReviews(data)).catch(console.log)
     } 
-   }, [searchInput])
+   }, [searchInput, reviews])
   
   const wines = liquors.filter( liquor => liquor.category === "Wines" )
   const whiskeys = liquors.filter( liquor => liquor.category === "Whiskey" )
@@ -62,6 +62,13 @@ const AppContextProvider = ({ children }) => {
   const gins = liquors.filter( liquor => liquor.category === "Gin" )
 
   const handleSearch = e => setSearchInput(e.target.value)
+
+  const handleDelete = e => {
+    fetch(reviewsApi+`/${e.target.id}`,{
+      method: "DELETE",
+    })
+    setReviews(reviews)
+  }
 
   async function addToCart(liquor, method) {
     const foundItem = cart.find(item => item.id === liquor.id)
@@ -95,7 +102,7 @@ const AppContextProvider = ({ children }) => {
     const stringCart = await JSON.stringify(cartToParse)
     localStorage.setItem('cart', stringCart)
 }
-    const value = { name, setName, getUserName, wines, cart, liquors, handleSearch, reviews, addToCart, whiskeys, gins, vodkas }
+    const value = { name, setName, wines, cart, liquors, handleSearch, handleDelete, reviews, addToCart, whiskeys, gins, vodkas }
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>
 }
 

@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# BOOZE BODEGA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Whole app](src/images/booze-bodega.png?raw=true "Booze Bodega")
 
-## Available Scripts
+## Team contributions
 
-In the project directory, you can run:
+Patrick - front-end\
+Stephen - front-end\
+Edward  - back-end\
+Allan   - banck-end\
+Victor  - Scrum Master
 
-### `npm start`
+## General info
+### MARKETING PROBLEM
+Many people have been shying away from clubs due to rising insecurity cases.This has led to emerging house parties and indooor celebrations
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### CAPTIVATING PROBLEM
+Think that buying known booze than unknown booze is better.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### MARKETING SOLUTION
+This application is designed to help revellers  get their share of fun at their comfort.
 
-### `npm test`
+### CAPTIVATING SOLUTION
+We help the user know what booze he/she might like and try it out according to other people's reviews.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Requirements
+ - Either a computer, Ipad, tablet or phone -An access to internet connection
 
-### `npm run build`
+### Technology used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-Html\
+-Css\
+-Reactjs\
+-Ruby\
+-Sql\
+-Heroku\
+-MySql
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Usage
+After cloning the repo, run bundle to install dependencies. To migrate your local database, run rake db:migrate. Also run rake db:seed (to load some seed data for Characteristics).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Live GitHub Pages Link
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The webpage address:
+https://booze-bodega.netlify.app/
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### License information
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[MIT](LICENCE)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Copyright (c) 2022 Booze Bodega
