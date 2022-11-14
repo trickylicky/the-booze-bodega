@@ -198,3 +198,12 @@ h3 { color: white;}
 .popup-overlay {
   background: rgba(212, 211, 211, 0.5);
 }
+
+/* Cart */
+.saveditems {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+}
