@@ -39,16 +39,16 @@ body {
   font-family: sans-serif;
   text-align: center;
   font-style: oblique;
-  font-size: 2.4rem;
+  font-size: 2.5rem;
 }
 .navbar a {
   display: inline-block;
-  font-size: 1em;
+  font-size: 2vw;
   text-decoration: none;
   color: pink;
 }
 .navbar a:hover {
-  font-size: large;
+  font-size: 2.5vw;
   color: red;
 }
 .navbar a:active {
@@ -94,10 +94,10 @@ footer ul {
   width: 18vw;
   border-radius: 10px;
   color: pink;
-  height: 56vh;
-}
-#liquor p {
+  height: auto;
+  padding-bottom: 10px;
   text-align: center;
+
 }
 #liquor img {
   display: block;
@@ -112,9 +112,18 @@ footer ul {
 .click, .readmore, .popup {
   background-color: pink;
   color: black;
+  border-radius: 15%;
+  width: 25%;
+  height: 5vh;
+  font-size: 1vw;
+  text-transform: capitalize;
+}
+.popup_buttons {
+  display: flex;
+  justify-content: space-evenly;
 }
 .readmore{
-  width:30%
+  width: 30%
 }
 .submit:active, .readmore:active {
   font-size: large;
@@ -129,11 +138,11 @@ h3 { color: white;}
 .search {
   position: absolute;
   left: 75%;
-  top: 12%;
+  top: 13%;
 }
 .search input {
   height: 40px;
-  width: 200px;
+  width: 20vw;
   text-align: center;
   font-size: large;
   border-radius: 5px;
@@ -188,14 +197,4 @@ h3 { color: white;}
 
 .popup-overlay {
   background: rgba(212, 211, 211, 0.5);
-}
-
-.popup_buttons {
-  display: flex;
-  justify-content: space-between;
-}
-/* Media Queries */
-
-@media screen {
-  
 }
