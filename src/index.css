@@ -142,7 +142,7 @@ h3 { color: white;}
 }
 .search input {
   height: 40px;
-  width: 200px;
+  width: 20vw;
   text-align: center;
   font-size: large;
   border-radius: 5px;
