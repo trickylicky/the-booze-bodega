@@ -48,7 +48,7 @@ const handleSubmit = (e, id) => {
 
   return (
     <div className='component cart'>
-      <p className='first'> Your saved items.</p>
+      <p className='first' style={{marginBottom : "100px"}}> Your saved items.</p>
       {cart.map(obj => {
         return(
           <main id='liquor' key={obj.id}>
