@@ -10,6 +10,19 @@ Edward  - back-end
 Allan   - banck-end
 Victor  - Scrum Master
 
+## General info
+### MARKETING PROBLEM
+Many people have been shying away from clubs due to rising insecurity cases.This has led to emerging house parties and indooor celebrations
+
+### CAPTIVATING PROBLEM
+Think that buying known booze than unknown booze is better.
+
+### MARKETING SOLUTION
+This application is designed to help revellers  get their share of fun at their comfort.
+
+### CAPTIVATING SOLUTION
+We help the user know what booze he/she might like and try it out according to other people's reviews.
+
 ### Requirements
  - Either a computer, Ipad, tablet or phone -An access to internet connection
 
