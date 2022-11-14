@@ -11,8 +11,12 @@ const AppContextProvider = ({ children }) => {
   const [name, setName] = useState('');
 
 
-  const liquorsApi = "http://localhost:9292/liquors"
-  const reviewsApi = "http://localhost:9292/reviews"
+  // Our Hosted backend APIs.
+
+  const liquorsApi = "https://fierce-gorge-06316.herokuapp.com/liquors"
+  
+  const reviewsApi = "https://fierce-gorge-06316.herokuapp.com/reviews"
+  
 
   const getCartHandler = async () => {
     const parsedCart = localStorage.getItem('cart');
