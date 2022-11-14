@@ -1,6 +1,6 @@
 # BOOZE BODEGA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Whole app](src/images/booze-bodega.png?raw=true "Booze Bodega")
 
 ## Team contributions
 
@@ -10,8 +10,21 @@ Edward  - back-end
 Allan   - banck-end
 Victor  - Scrum Master
 
-### How to use the app
-![Whole app](src/images/booze-bodega.png?raw=true "Booze Bodega")
+### Requirements
+ - Either a computer, Ipad, tablet or phone -An access to internet connection
+
+### Technology used
+
+-Html
+-Css
+-Reactjs
+-Ruby
+-Sql
+-Heroku
+-MySql
+
+### Usage
+After cloning the repo, run bundle to install dependencies. To migrate your local database, run rake db:migrate. Also run rake db:seed (to load some seed data for Characteristics).
 
 
 ### Live GitHub Pages Link
