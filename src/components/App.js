@@ -17,7 +17,7 @@ import Modal from './Modal'
 
 function App() {
 
-  const { handleSearch, liquors, cart, getUserName } = useContext(AppContext);
+  const {getUserName } = useContext(AppContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
@@ -38,15 +38,15 @@ function App() {
     <div>
       <ModalOverlay></ModalOverlay>
       <NavBar />
-      <Search handleSearch ={handleSearch}/>
+      <Search />
       <Routes>
-        <Route exact path='/' element={<Home products={liquors} /> } />
+        <Route exact path='/' element={<Home /> } />
         <Route path='/whiskey' element={<Whiskey />} />
         <Route path='/gin' element={<Gin />} />
         <Route path='/vodka' element={<Vodka />} />
         <Route path='/wine' element={<Wine />} />
         <Route path='/blog' element={<Blog />} />
-        <Route path='/cart' element={<Cart savedItems ={cart} />} />
+        <Route path='/cart' element={<Cart />} />
       </Routes>
       <Footer />
     </div>
