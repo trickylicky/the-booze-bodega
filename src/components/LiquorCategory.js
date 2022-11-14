@@ -3,12 +3,17 @@ import Popup from 'reactjs-popup'
 import { AppContext } from '../services/app-context'
 
 function LiquorCategory( {props} ) {
+
   const [form, setForm] = useState({
-    name: "",
-    comment: ""
+    name: '',
+    review_data: {
+      rating: '',
+      comment: '',
+      liquor_id: ''
+    }
   })
 
-  const { reviews, addToCart, name, setReviews } = useContext(AppContext);
+  const { reviews, handleDelete, addToCart, name, setReviews } = useContext(AppContext);
 
   const handleChange = e => setForm({...form, [e.target.name] : e.target.value})
 
@@ -19,7 +24,7 @@ function LiquorCategory( {props} ) {
     const updatedForm = {
       name: name,
       review_data: {
-        rating: Math.ceil(Math.random()*5), // Will be modified to return average rating of all users.
+        rating: Math.ceil(Math.random()*5),
         comment: form.comment,
         liquor_id: id
       },
@@ -32,7 +37,14 @@ function LiquorCategory( {props} ) {
     })
 
     setReviews(reviews)
-    setForm({})
+    setForm({
+      name: '',
+      review_data: {
+        rating: '',
+        comment: '',
+        liquor_id: ''
+      }
+    })
   }
 
   return (
@@ -61,7 +73,13 @@ function LiquorCategory( {props} ) {
                     <h3>Users Reviews</h3> <hr />
                     {
                       reviews.filter(review => review.liquor_id === obj.id)
-                      .map(review =>  review.length === 0 ? <h4>There are no reviews yet.</h4> : <li key={review.id}>{review.comment}</li>
+                      .map(review =>  review.length === 0 ? <h4>There are no reviews yet.</h4> : 
+                      <li key={review.id}>
+                        {review.comment}  &emsp;
+                        <button type='click' id={review.id} onClick={e => handleDelete(e)} style={{color:"black", background:"red"}}>
+                          X
+                        </button>
+                      </li>
                       )
                     }
                   </ul> <br /> <br />
@@ -81,7 +99,7 @@ function LiquorCategory( {props} ) {
                   </button>} 
                   position="left bottom"
                   >  <br />
-                  <form onSubmit={e => handleSubmit(e, obj.id)}>
+                  <form onSubmit={e => handleSubmit(e, obj.id)} target="">
                     <label for="reviews"> Leave a review(s) <br /> <br />
                       <textarea 
                         name="comment" 
@@ -91,7 +109,7 @@ function LiquorCategory( {props} ) {
                       >
                       </textarea>
                     </label>  <br /> <br />
-                    <input type='submit' value='post' />
+                    <input type='submit' value='add' />
                   </form> <br /> <br />
                 </Popup>
               </div>
