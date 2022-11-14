@@ -129,7 +129,14 @@ h3 { color: white;}
 .search {
   position: absolute;
   left: 75%;
-  top: 14%;
+  top: 12%;
+}
+.search input {
+  height: 40px;
+  width: 200px;
+  text-align: center;
+  font-size: large;
+  border-radius: 5px;
 }
 
 /* Home */
@@ -157,8 +164,8 @@ h3 { color: white;}
 /* Cart */
 #cart_icon  {
   position: absolute;
-  left: 75%;
-  top: 6%;
+  left: 65%;
+  top: 14%;
 }
 
 /* Popup Modal */
