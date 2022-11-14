@@ -1,5 +1,5 @@
 body {
-  width: 97vw;
+  width: 95vw;
   margin: auto;
   background-color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,13 +9,21 @@ body {
     -moz-osx-font-smoothing: grayscale;
   background: url(../public/bg2.jpg) no-repeat 0% 25vh;
   background-size: 100vw 40vh;
+  background-color: black;
 }
+
+/* paragraphs */
 .first {
   height: 30vh; 
-  margin-top: 15vh;
-  color: white;
+  margin-top: 10vh;
+  color: pink;
   text-align: center;
   font-size: 3em;
+  margin-bottom: 10%;
+ }
+ .second { 
+  color: pink;
+  margin: 0 0 3% 5%;
  }
 
 /* Navbar */
@@ -24,7 +32,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 50vw;
-  margin: auto;
+  margin-left: 5%;
 }
 .navh1 {
   color: rgb(155, 27, 47);
@@ -37,7 +45,7 @@ body {
   display: inline-block;
   font-size: 1em;
   text-decoration: none;
-  color: black;
+  color: pink;
 }
 .navbar a:hover {
   font-size: large;
@@ -46,14 +54,12 @@ body {
 .navbar a:active {
   text-decoration: underline;
 }
-/* NavBar end */
-
 
 /* Footer */
 footer {
   background-color:rgb(155, 27, 47);
   color: white;
-  padding-bottom: 5px;
+  padding: 5px;
 }
 .sections {
   display: flex;
@@ -64,76 +70,132 @@ footer ul {
   line-height: 2em;
 }
 
-/* Footer end */
-
 /* Blog*/
-
 .article {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 80px;
 }
-
 .blogarticle {
   width: 23vw;
   background-color: lightgray;
   border-radius: 2%;
   padding: 10px;
 }
-
 .blogarticle img {
   display: inline-block;
   width: 23vw;
 }
 
-/* Blog end */
-
 /* Liquor */
 #liquor {
   margin-bottom: 30px;
-  border: 2px whitesmoke solid;
-  display: flex;
-  align-items: center;
-  width: 30vw;
+  border: 1px rgb(131, 125, 125) solid;
+  width: 18vw;
   border-radius: 10px;
-  background-color: lightgray;
+  color: pink;
+  height: 56vh;
 }
-
 #liquor p {
   text-align: center;
-  line-height: 2em;
 }
-
 #liquor img {
-  width: 70%;
-  height: 100%;
+  display: block;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
 }
 .liquors {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.submit, .readmore {
-  background-color: red;
-  color: white;
-  width: 70%;
+.click, .readmore, .popup {
+  background-color: pink;
+  color: black;
 }
-
 .readmore{
   width:30%
 }
-
 .submit:active, .readmore:active {
   font-size: large;
 }
-
-/* Liquor end  */
+ul {
+  list-style-type: none;
+  font-style: italic;
+}
+h3 { color: white;}
 
 /* Search */
 .search {
-  display: block;
-  margin: auto;
-  width: 20%;
+  position: absolute;
+  left: 75%;
+  top: 12%;
+}
+.search input {
+  height: 40px;
+  width: 200px;
+  text-align: center;
+  font-size: large;
+  border-radius: 5px;
 }
 
-/* Search end */
+/* Home */
+.categories {
+  display: flex;
+  justify-content: space-evenly;
+}
+.categories a {
+  text-decoration: none;
+  text-align: center;
+  color: pink;
+  padding-bottom: 30px;
+
+}
+.categories a img:hover {
+  width: 20vw;
+  height: 20vh;
+}
+
+/* className = component */
+.component {
+  width: 90vw;
+}
+
+/* Cart */
+#cart_icon  {
+  position: absolute;
+  left: 65%;
+  top: 14%;
+}
+
+/* Popup Modal */
+.popup-content {
+  background: rgb(10, 10, 10);
+  color: pink;
+  text-align: center;
+  border-radius: 1%;
+}
+.popup-content img {
+  border-radius: 1% 1% 0 0;
+}
+.popup-arrow {
+  color: rgb(255, 255, 255);
+}
+[role='tooltip'].popup-content {
+  width: auto;
+  height: auto;
+}
+
+.popup-overlay {
+  background: rgba(212, 211, 211, 0.5);
+}
+
+.popup_buttons {
+  display: flex;
+  justify-content: space-between;
+}
+/* Media Queries */
+
+@media screen {
+  
+}

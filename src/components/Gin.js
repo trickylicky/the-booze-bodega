@@ -1,13 +1,15 @@
-import React from 'react'
-import Liquor from './Liquor'
+import React, { useContext } from 'react'
+import { AppContext } from '../services/app-context'
+import LiquorCategory from './LiquorCategory'
 
 
-function Gin( {gins, searchFilter} ) {
+function Gin() {
+  const { gins, addToCart } = useContext(AppContext)
   return (
-    <div className='component blog'>
+    <div className='component gin'>
         <p className='first'>Gin</p>
-        <p>There are {gins.length} products.</p>
-        <Liquor props = {gins} />
+        <p className='second'>There are {gins.length} products.</p>
+        <LiquorCategory props={gins} addToCart={addToCart} />
     </div>
   )
 }

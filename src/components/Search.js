@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../services/app-context'
 
-function Search( {searchFilter} ) {
- 
-  return (
-     <div className="center search">
+
+function Search() {
+  const { handleSearch } = useContext(AppContext)
+
+   return (
+     <div className="search">
     <input
       type="text"
-      placeholder="Search..."
-      onChange={(e) => searchFilter(e)}
+      placeholder="search liquor name..."
+      onChange={(e) => handleSearch(e)}
     />
   </div>
   )

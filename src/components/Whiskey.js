@@ -1,14 +1,16 @@
-import React from 'react'
-import Liquor from './Liquor'
+import React, { useContext } from 'react'
+import { AppContext } from '../services/app-context';
+import LiquorCategory from './LiquorCategory'
 
-function Whiskey( {whiskeys}) {
+function Whiskey() {
+  const { whiskeys, addToCart } = useContext(AppContext);
   return (
-    <div className='component blog'>
+    <div className='component whiskey'>
         <p className='first'>Whiskey</p>
-        <p>There are {whiskeys.length} products.</p>
-        <Liquor props = {whiskeys} />
+        <p className='second'>There are {whiskeys.length} products.</p>
+        <LiquorCategory props={whiskeys} addToCart={addToCart} />
     </div>
   )
 }
 
-export default Whiskey
+export default Whiskey;
