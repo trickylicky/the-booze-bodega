@@ -60,8 +60,8 @@ function LiquorCategory( {props} ) {
                   <ul>
                     <h3>Users Reviews</h3> <hr />
                     {
-                      reviews.filter(review => review.liquor_id === obj.id && review.length >= 1)
-                      .map(review =>  <li key={review.id}>{review.comment}</li>
+                      reviews.filter(review => review.liquor_id === obj.id)
+                      .map(review =>  review.length === 0 ? <h4>There are no reviews yet.</h4> : <li key={review.id}>{review.comment}</li>
                       )
                     }
                   </ul> <br /> <br />
