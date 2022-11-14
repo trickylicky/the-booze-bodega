@@ -22,7 +22,7 @@ function LiquorCategory( {props} ) {
     e.preventDefault()
 
     const updatedForm = {
-      name: name,
+      name: form.username,
       review_data: {
         rating: Math.ceil(Math.random()*5),
         comment: form.comment,
@@ -100,6 +100,9 @@ function LiquorCategory( {props} ) {
                   position="left bottom"
                   >  <br />
                   <form onSubmit={e => handleSubmit(e, obj.id)} target="">
+                    <label> Add your name: <br /><br />
+                      <input type='text' name="username" onChange={e => handleChange(e)}/>
+                    </label> <br /> <br />
                     <label for="reviews"> Leave a review(s) <br /> <br />
                       <textarea 
                         name="comment" 
@@ -109,7 +112,7 @@ function LiquorCategory( {props} ) {
                       >
                       </textarea>
                     </label>  <br /> <br />
-                    <input type='submit' value='add' />
+                    <input type='submit' className='click' value='add' />
                   </form> <br /> <br />
                 </Popup>
               </div>
