@@ -4,10 +4,10 @@
 
 ## Team contributions
 
-Patrick - front-end 
-Stephen - front-end
-Edward  - back-end
-Allan   - banck-end
+Patrick - front-end\
+Stephen - front-end\
+Edward  - back-end\
+Allan   - banck-end\
 Victor  - Scrum Master
 
 ## General info
@@ -28,12 +28,12 @@ We help the user know what booze he/she might like and try it out according to o
 
 ### Technology used
 
--Html
--Css
--Reactjs
--Ruby
--Sql
--Heroku
+-Html\
+-Css\
+-Reactjs\
+-Ruby\
+-Sql\
+-Heroku\
 -MySql
 
 ### Usage
