@@ -1,60 +1,48 @@
 # BOOZE BODEGA
 
-![Whole app](src/images/boozed.png?raw=true "Booze Bodega")
+![Whole app](src/images/booze-bodega.png?raw=true "Booze Bodega")
 
 ## Team contributions
 
-Patrick - front-end\
-Stephen - front-end\
-Edward  - back-end\
-Allan   - banck-end\
-Victor  - Scrum Master
+### Patrick - front-end\
+### Stephen - front-end\
+### Edward  - back-end\
+### Allan   - banck-end\
+### Victor  - Scrum Master
 
-## General info
-### MARKETING PROBLEM
-Many people have been shying away from clubs due to rising insecurity cases.This has led to emerging house parties and indooor celebrations
+# Installation
 
-### CAPTIVATING PROBLEM
-Think that buying known booze than unknown booze is better.
+## Requirements
+#### - A computer or smartphone and,
+#### - Internet access.
 
-### MARKETING SOLUTION
-This application is designed to help revellers  get their share of fun at their comfort.
+## Setup Instructions
 
-### CAPTIVATING SOLUTION
-We help the user know what booze he/she might like and try it out according to other people's reviews.
+#### 1. Create a local repo where you want to add this project.
+#### 2.Fork this repo into your github and then clone into your machine via the terminal.
 
-### PROJECT REVIEW
-In this application a user is ableto search for any booze,add it to cart and leave a review on it.
+#### 3. navigate to the newly created folder 'the-booze-bodega' via the terminal and run `npm-start` to view the page in the browser. If you had downloaded the zip folder, navigate to the unzipped version of this folder via the terminal and do the same.
+#### 4. This will enable you to view have the entire project in your machine. To make this project a part of your github repo so you can edit it, first fork this repo, then repeat the above process.
+#### 5. To visit the page directly, visit the LIVE LINK provided below.
 
-### Requirements
- - Either a computer, Ipad, tablet or phone -An access to internet connection
+# Technologies Used
 
-### INSTALLATION
-npm install -> npm run server -> npm start
+#### 1. HTML.
+#### 2. CSS.
+#### 3. React.js
+#### 4. Postgress
+#### 5. Ruby
+#### 6. Sqlite3
+#### 7. Heroku
+#### 8. MySql
+#### 9. Netlify
 
-### Technology used
-
--Html
--Css
--React.js
--Ruby
--Sqlite3
--Heroku
--MySql
--Netlify
--Postgress
-
-### Usage
-After cloning the repo, run bundle to install dependencies. To migrate your local database, run rake db:migrate. Also run rake db:seed (to load some seed data for Characteristics).
+# Live Link  
+### [https://booze-bodega.netlify.app/](https://booze-bodega.netlify.app/)
 
 
-### Live GitHub Pages Link
+# License information
 
-The webpage address:
-https://booze-bodega.netlify.app/
+## [MIT](LICENCE)
 
-### License information
-
-[MIT](LICENCE)
-
-Copyright (c) 2022 Booze Bodega
+### Copyright (c) 2022 Booze Bodega
