@@ -12,6 +12,10 @@ body {
   background-color: black;
 }
 
+/* all components */
+.component {
+  width: 90vw;
+}
 /* paragraphs */
 .first {
   height: 30vh; 
@@ -41,7 +45,6 @@ body {
   text-align: center;
   font-style: oblique;
   font-size: 3rem;
-  
 }
 .navbar a {
   display: inline-block;
@@ -99,7 +102,6 @@ footer ul {
   height: auto;
   padding-bottom: 10px;
   text-align: center;
-
 }
 #liquor img {
   display: block;
@@ -115,12 +117,13 @@ footer ul {
   background-color: pink;
   color: black;
   border-radius: 50%;
-  padding: 7px;
+  padding: 10px;
 }
 .popup_buttons {
   display: flex;
   justify-content: space-around;
 }
+.fa-info { width: 15px;}
 .readmore{
   width: 30%
 }
@@ -132,6 +135,7 @@ ul {
   font-style: italic;
 }
 h3 { color: white;}
+#more_details { padding: 10px;}
 
 /* Search */
 .search {
@@ -169,11 +173,6 @@ h3 { color: white;}
   height: 20vh;
 }
 
-/* className = component */
-.component {
-  width: 90vw;
-}
-
 /* Cart */
 #cart_icon  {
   position: absolute;
@@ -203,16 +202,14 @@ h3 { color: white;}
   height: 60vh;
 }
 .popup-arrow {
-  /* color: rgb(255, 255, 255); */
+  color: rgb(255, 255, 255);
 }
 [role='tooltip'].popup-content {
   width: auto;
   height: auto;
   margin-left: 100px;
   width: 30vw;
-
 }
-
 .popup-overlay {
   background: rgba(212, 211, 211, 0.5);
 }
