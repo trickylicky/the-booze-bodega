@@ -60,7 +60,7 @@ function LiquorCategory( {props} ) {
               <div className='popup_buttons'>
 
                 <Popup 
-                  trigger={<button className='popup'><i class="fa-sharp fa-solid fa-circle-info"></i></button>} 
+                  trigger={<button className='popup'><i className="fa-solid fa-info"></i></button>} 
                   position="center center"
                 >
                   <img src={obj.image_url} alt={obj.title} />
