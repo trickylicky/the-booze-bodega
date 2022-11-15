@@ -11,7 +11,10 @@
 ### Allan   - banck-end
 
 # Description
-### add here
+
+This website is a website which assists users to be able to search for booze and also they are able to view and post reviews on a particular booze.It is
+an online store for consumers making it simple to shop for your favorite booze.One may make purchases online from the comfort of their homes using Booze-bodega website.
+
 # Installation
 
 ## Requirements
