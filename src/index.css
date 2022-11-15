@@ -138,7 +138,7 @@ h3 { color: white;}
 .search {
   position: absolute;
   left: 75%;
-  top: 13%;
+  top: 14%;
 }
 .search input {
   height: 40px;
@@ -174,7 +174,14 @@ h3 { color: white;}
 #cart_icon  {
   position: absolute;
   left: 65%;
-  top: 14%;
+  top: 15%;
+}
+.saveditems {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 /* Popup Modal */
@@ -197,13 +204,4 @@ h3 { color: white;}
 
 .popup-overlay {
   background: rgba(212, 211, 211, 0.5);
-}
-
-/* Cart */
-.saveditems {
-  display: flex;
-  width: 60%;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: auto;
 }
