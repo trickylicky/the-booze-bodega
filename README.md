@@ -1,6 +1,6 @@
 # BOOZE BODEGA
 
-![Whole app](src/images/booze-bodega.png?raw=true "Booze Bodega")
+![Whole app](src/images/booze.png?raw=true "Booze Bodega")
 
 ## Team contributions
 
