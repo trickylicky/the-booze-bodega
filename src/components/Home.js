@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import { AppContext } from '../services/app-context'
 import LiquorCategory from './LiquorCategory'
 
-function Home({products, addToCart}) {
+function Home() {
+  const { liquors } = useContext(AppContext)
   
   return (
     <div className='component home'>
@@ -28,7 +30,7 @@ function Home({products, addToCart}) {
       </div>
       <p className='second'>All Products</p>
       <div>
-        <LiquorCategory props={products} addToCart={addToCart} />
+        <LiquorCategory props={liquors} />
       </div>
     </div>
   )
