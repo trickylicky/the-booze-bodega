@@ -58,7 +58,7 @@ const handleSubmit = (e, id) => {
               <div className='popup_buttons'>
 
                 <Popup
-                  trigger={<button className='popup'> more details</button>} 
+                  trigger={<button className='popup'><i class="fa-sharp fa-solid fa-circle-info"></i></button>} 
                   position="center center"
                 >
                   <img src={obj.image_url} alt={obj.title} />
