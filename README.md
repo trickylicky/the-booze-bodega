@@ -4,11 +4,11 @@
 
 ## Team contributions
 
-### Patrick - front-end\
-### Stephen - front-end\
-### Edward  - back-end\
-### Allan   - banck-end\
 ### Victor  - Scrum Master
+### Patrick - front-end
+### Stephen - front-end
+### Edward  - back-end
+### Allan   - banck-end
 
 # Installation
 
