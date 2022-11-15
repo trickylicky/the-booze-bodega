@@ -7,7 +7,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  background: url(../public/bg2.jpg) no-repeat 0% 25vh;
+  background: url(../public/bg2.jpg) no-repeat 0% 30vh;
   background-size: 100vw 40vh;
   background-color: black;
 }
@@ -15,40 +15,42 @@ body {
 /* paragraphs */
 .first {
   height: 30vh; 
-  margin-top: 10vh;
+  margin-top: 20vh;
   color: pink;
   text-align: center;
   font-size: 3em;
-  margin-bottom: 10%;
+  margin-bottom: 15%;
  }
  .second { 
   color: pink;
   margin: 0 0 3% 5%;
+  font-size: 1.5vw;
  }
 
 /* Navbar */
 .navlinks {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  width: 50vw;
-  margin-left: 5%;
+  width: 70vw;
+  margin: 50px auto 0px
 }
 .navh1 {
   color: rgb(155, 27, 47);
   font-family: sans-serif;
   text-align: center;
   font-style: oblique;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  
 }
 .navbar a {
   display: inline-block;
-  font-size: 2vw;
+  font-size: 1.5vw;
   text-decoration: none;
   color: pink;
 }
 .navbar a:hover {
-  font-size: 2.5vw;
+  font-size: 2vw;
   color: red;
 }
 .navbar a:active {
@@ -137,15 +139,20 @@ h3 { color: white;}
 /* Search */
 .search {
   position: absolute;
-  left: 75%;
-  top: 14%;
+  left: 40%;
+  top: 79%;
+  margin-bottom: 40px;
+}
+.search label {
+  color: pink;
+  font-size: 1.5vw;
 }
 .search input {
-  height: 40px;
-  width: 20vw;
+  height: 35px;
+  width: 15vw;
   text-align: center;
-  font-size: large;
-  border-radius: 5px;
+  font-size: 1.5vw;
+  border-radius: 10px;
 }
 
 /* Home */
@@ -173,8 +180,9 @@ h3 { color: white;}
 /* Cart */
 #cart_icon  {
   position: absolute;
-  left: 65%;
-  top: 15%;
+  left: 83%;
+  top: 8%;
+  font-size: x-large;
 }
 .saveditems {
   display: flex;
@@ -182,6 +190,7 @@ h3 { color: white;}
   justify-content: space-between;
   flex-wrap: wrap;
   margin: auto;
+  padding-top: 60px;
 }
 
 /* Popup Modal */
@@ -193,13 +202,18 @@ h3 { color: white;}
 }
 .popup-content img {
   border-radius: 1% 1% 0 0;
+  width: 30vw;
+  height: 60vh;
 }
 .popup-arrow {
-  color: rgb(255, 255, 255);
+  /* color: rgb(255, 255, 255); */
 }
 [role='tooltip'].popup-content {
   width: auto;
   height: auto;
+  margin-left: 100px;
+  width: 30vw;
+
 }
 
 .popup-overlay {
