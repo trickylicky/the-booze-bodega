@@ -34,13 +34,15 @@ npm install -> npm run server -> npm start
 
 ### Technology used
 
--Html\
--Css\
--Reactjs\
--Ruby\
--Sql\
--Heroku\
+-Html
+-Css
+-React.js
+-Ruby
+-Sqlite3
+-Heroku
 -MySql
+-Netlify
+-Postgress
 
 ### Usage
 After cloning the repo, run bundle to install dependencies. To migrate your local database, run rake db:migrate. Also run rake db:seed (to load some seed data for Characteristics).
