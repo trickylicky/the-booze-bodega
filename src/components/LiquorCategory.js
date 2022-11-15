@@ -60,7 +60,7 @@ function LiquorCategory( {props} ) {
               <div className='popup_buttons'>
 
                 <Popup 
-                  trigger={<button className='popup'> more details</button>} 
+                  trigger={<button className='popup'><i className="fa-solid fa-info"></i></button>} 
                   position="center center"
                 >
                   <img src={obj.image_url} alt={obj.title} />
@@ -99,13 +99,15 @@ function LiquorCategory( {props} ) {
                   </button>} 
                   position="left bottom"
                   >  <br />
-                  <form onSubmit={e => handleSubmit(e, obj.id)} target="">
+                  <form onSubmit={e => handleSubmit(e, obj.id)} >
                     <label> Add your name: <br /><br />
-                      <input type='text' name="username" onChange={e => handleChange(e)}/>
+                      <input required type='text' name="username" onChange={e => handleChange(e)}/>
                     </label> <br /> <br />
                     <label for="reviews"> Leave a review(s) <br /> <br />
                       <textarea 
-                        name="comment" 
+                        name="comment"
+                        required
+                        minLength="3"
                         onChange={e => handleChange(e)} 
                         placeholder='Share your thoughts on this liquor...' 
                         style={{height: '100px', width: "200px"}}

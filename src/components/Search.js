@@ -7,11 +7,13 @@ function Search() {
 
    return (
      <div className="search">
-    <input
-      type="text"
-      placeholder="search liquor name..."
-      onChange={(e) => handleSearch(e)}
-    />
+      <label> Filter Products : &nbsp;
+        <input
+          type="text"
+          placeholder="liquor name..."
+          onChange={(e) => handleSearch(e)}
+        />
+      </label>
   </div>
   )
 }
