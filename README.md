@@ -2,7 +2,7 @@
 
 ![Whole app](src/images/boozed.png?raw=true "Booze Bodega")
 
-## Team contributions
+# Team contributions
 
 ### Victor  - Scrum Master
 ### Patrick - front-end
