@@ -29,7 +29,7 @@ const handleSubmit = (e, id) => {
     },
   }
 
-  fetch("https://fierce-gorge-06316.herokuapp.com/reviews", {
+  fetch("http://localhost:9292/reviews", {
     method: "POST",
     headers : {"Content-Type": "application/json"},
     body : JSON.stringify(updatedForm)
@@ -50,11 +50,12 @@ const handleSubmit = (e, id) => {
     <div className='component cart'>
       <p className='first' style={{marginBottom : "100px"}}> Your saved items.</p>
       <div className='saveditems'>
-        {cart.map(obj => {
+        {cart.length > 0?  cart.map(obj => {
           return(
             <main id='liquor' key={obj.id}>
               <img src={obj.image_url} alt={obj.title} />
-              <p className='liquor_details'> <b>{obj.title}</b> </p> <br />
+              <p className='liquor_details'> <b>{obj.title}</b> </p>
+              <p> Item added {obj.quantity} time(s)</p> <br />
               <div className='popup_buttons'>
 
                 <Popup
@@ -66,7 +67,6 @@ const handleSubmit = (e, id) => {
                     <b>{obj.title}</b>  <br /><br />
                     {obj.description}   <br /><br />
                     Price : &nbsp; <span style={{color:'red', fontSize: 'large'}}> Ksh. {obj.price}</span> <br /> <br />
-                    Item has been added {obj.quantity} times.
                   </p>
                   <ul>
                     <h3>Users Reviews</h3> <hr />
@@ -119,7 +119,7 @@ const handleSubmit = (e, id) => {
               </div>
             </main>
           )
-        })}
+        }) : <h1 style={{color: "pink", margin: '100px 0'}}>You have not saved any liquor.</h1>}
       </div>
     
       

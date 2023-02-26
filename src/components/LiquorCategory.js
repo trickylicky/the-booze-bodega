@@ -13,7 +13,7 @@ function LiquorCategory( {props} ) {
     }
   })
 
-  const { reviews, handleDelete, addToCart, name, setReviews } = useContext(AppContext);
+  const { reviews, handleDelete, addToCart, setReviews } = useContext(AppContext);
 
   const handleChange = e => setForm({...form, [e.target.name] : e.target.value})
 
@@ -30,7 +30,7 @@ function LiquorCategory( {props} ) {
       },
     }
 
-    fetch("https://fierce-gorge-06316.herokuapp.com/reviews", {
+    fetch("http://localhost:9292/reviews", {
       method: "POST",
       headers : {"Content-Type": "application/json"},
       body : JSON.stringify(updatedForm)
@@ -40,9 +40,7 @@ function LiquorCategory( {props} ) {
     setForm({
       name: '',
       review_data: {
-        rating: '',
         comment: '',
-        liquor_id: ''
       }
     })
   }

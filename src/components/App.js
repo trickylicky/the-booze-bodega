@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
-import NavBar from './NavBar'
+import React from 'react';
 import {Routes, Route} from "react-router-dom"
+import NavBar from './NavBar'
 import Home from "./Home"
 import Footer from "./Footer"
 import Blog from './Blog'
