@@ -8,7 +8,7 @@
 ### Patrick - front-end
 ### Stephen - front-end
 ### Edward  - back-end
-### Allan   - banck-end
+### Allan   - back-end
 
 # Description
 
